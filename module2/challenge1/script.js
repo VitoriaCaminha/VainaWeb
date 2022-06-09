@@ -1,13 +1,13 @@
-let name = "Vitória"
+let devName = "Vitória"
 
-let number = 23
+let devAge = 23
 let year = 2022
 year = 2022 - 23
 
-console.log(number + year)
+console.log(devAge + year)
 
 console.log("Estou mexendo no console.log")
 
-let quartaFeira = true
+let quartaFeira = false
 console.log(quartaFeira)
 console.log(typeof quartaFeira)
