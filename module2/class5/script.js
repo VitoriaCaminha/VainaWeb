@@ -1,8 +1,8 @@
 // Revisão das aulas anteriores
 
 /*
-    = atribui valor ou verifica tipo
-    == verifica se os valores são iguais
+    = atribui valor ou verifica tipo (operador de atribuição)
+    == verifica se os valores são iguais (operador de igualdade de valores)
     === verifica se os valores e os tipos são iguais (estritamente igual)
     != verifica se os valores são diferentes
     !== verifica se os valores e os tipos são diferentes
