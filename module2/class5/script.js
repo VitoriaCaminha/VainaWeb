@@ -3,7 +3,7 @@
 /*
     = atribui valor ou verifica tipo
     == verifica se os valores são iguais
-    === verifica se os valores e os tipos são iguais
+    === verifica se os valores e os tipos são iguais (estritamente igual)
     != verifica se os valores são diferentes
     !== verifica se os valores e os tipos são diferentes
 
