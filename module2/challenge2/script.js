@@ -2,19 +2,19 @@ let userAge = 23
 let human = false
 let userBirthday = 'julho'
 
-if (userAge > 18) {
+if (userAge >= 18) {
     console.log('Você é maior de idade')
 } else {
     console.log('Você é menor de idade')
 }
 
-if (userAge > 18 && human == true) {
+if (userAge >= 18 && human === true) {
     console.log('Você é uma pessoa maior de idade')
 } else {
     console.log('Como assim você não é uma pessoa?')
 }
 
-if (userBirthday == 'janeiro' || userBirthday == 'dezembro') {
+if (userBirthday === 'janeiro' || userBirthday === 'dezembro') {
     console.log('Você faz aniversário em janeiro ou dezembro')
 } else {
     console.log('Você faz aniversário em outro mês do ano')
@@ -27,7 +27,7 @@ if (userBirthday == 'janeiro' || userBirthday == 'dezembro') {
 let userName = 'Vitória'
 let userLastName = 'Caminha'
 
-if (userName[0] == 'R' || userName[0] == 'r') {
+if (userName[0] == 'R' || userName.substring(0,1) == 'r') {
     console.log('Seu nome começa com a letra R')
 } else {
     console.log('Seu nome não começa com a letra R')
