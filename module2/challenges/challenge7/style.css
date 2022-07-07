@@ -92,7 +92,11 @@ input::placeholder {
 }
 
 .box {
-    background: #FF002E;
+  background: #ff002e;
+  width: 51px;
+  height: 47px;
+  border-radius: 10px;
+  border: none;
 }
 
 p a {
