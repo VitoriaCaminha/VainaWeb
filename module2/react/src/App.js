@@ -1,3 +1,40 @@
+// Prática React 01 - Renderizando um state
+
+import React, { Component } from 'react'
+import Pinha from './pinha.jpg'
+
+export default class App extends Component {
+  state = {
+    nome: 'Vitória',
+    idade: 24,
+    comidaFavorita: 'purê de batata',
+    musicasFavoritas: [
+      'Panic Station - MUSE',
+      'Butterflies and Hurricanes - MUSE',
+      'Scret Door - Arctic Monkeys',
+    ],
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>{this.state.nome}</h1>
+        <h2>{this.state.idade}</h2>
+        <h3>{this.state.comidaFavorita}</h3>
+        <ul>
+          <li>{this.state.musicasFavoritas[0]}</li>
+          <li>{this.state.musicasFavoritas[1]}</li>
+          <li>{this.state.musicasFavoritas[2]}</li>
+        </ul>
+        <img
+          src={Pinha}
+          alt="Imagem com duas frutas chamadas pinha, sendo uma fechada e a outra aberta no meio"
+        />
+      </div>
+    )
+  }
+}
+
 // Tarefa de classe
 
 // // crie um component de class com um state com uma array de nomes e mostre na tela com um h1
@@ -14,7 +51,7 @@
 //       <div>
 //         <h1>{this.state.nome}</h1>
 //       </div>
-//     ) 
+//     )
 //   }
 // }
 
