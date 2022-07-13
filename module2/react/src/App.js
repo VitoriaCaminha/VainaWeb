@@ -175,3 +175,101 @@
 //     )
 //   }
 // }
+
+// class 16: arrow function
+
+/*
+import React, { Component } from 'react'
+
+export default class Nome extends Component {
+  state = {
+    nome: 'joca',
+  }
+
+  mensagem = () => 'Telescopio' // simples, para retornar uma tarefa em uma linha
+
+  menssenger = () => {
+    return (
+      <div>
+        <h2>A importancia da missão da nasa de descoberta de novas galaxias</h2>
+        <p>
+          O telescopio james weeb tem nos mostrado um universo cheio de belezas
+          e misterios
+        </p>
+      </div>
+    )
+  }
+
+  nome = (nome, sobrenome) => {
+    return (
+      <div>
+        <p>{`meu nome é ${nome}, e meu sobrenome é ${sobrenome}`}</p>
+      </div>
+    )
+  }
+
+  Soma = () => 5 + 8 //forma simplificada de uma linha
+
+  Conta = (x, y) => {
+    return (
+      <div>
+        <p>{x * y}</p>
+        <hr />
+      </div>
+    )
+  }
+
+  oi = () => {
+    return <p>Oi, eu sou o {this.state.nome}</p>
+  }
+
+  render() {
+    return (
+      <header>
+        <h1>{this.mensagem()}</h1>
+        {this.menssenger()}
+        {this.nome('Débora', 'Andrade')}
+        {this.nome('João', 'Figueiredo')}
+        <p>{this.Soma()}</p>
+        {this.Conta(3, 8)}
+        {this.Conta(2, 4)}
+        {this.Conta(5, 6)}
+        {this.oi()}
+      </header>
+    )
+  }
+}
+*/
+
+//Crie um component  de class
+//Agora crie uma arrow function para mostrar na tela o nome de 3 amigos
+//E por ultimo, crie outra arrow function para somar a idade desses 3 amigos
+
+/*
+import React, { Component } from 'react'
+
+export default class Grupo3 extends Component {
+  nome = () => {
+    return (
+      <div>
+        <p>Vitória</p>
+        <p>Leno</p>
+        <p>Débora</p>
+      </div>
+    )
+  }
+
+  soma = () => {
+    return 1 + 2 + 3
+  }
+
+  render() {
+    return (
+      <div>
+        {this.nome()}
+        {this.soma()}
+      </div>
+    )
+  }
+}
+*/
