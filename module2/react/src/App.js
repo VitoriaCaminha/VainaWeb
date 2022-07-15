@@ -1,3 +1,30 @@
+// Prática React 04 - Arrow function
+
+import React, { Component } from 'react'
+
+export default class App extends Component {
+  mensagem = () => {
+    return (
+      <div>
+        <p>Mensagem a ser exibida na tela</p>
+      </div>
+    )
+  }
+
+  dobro = (numero) => {
+    return numero * 2
+  }
+
+  render() {
+    return (
+      <div>
+        {this.mensagem()}
+        {this.dobro(2)}
+      </div>
+    )
+  }
+}
+
 // // Prática React 01 - Renderizando um state
 
 // import React, { Component } from 'react'
@@ -188,7 +215,7 @@ export default class Nome extends Component {
 
   mensagem = () => 'Telescopio' // simples, para retornar uma tarefa em uma linha
 
-  menssenger = () => {
+  menssenger = () => { // Arrow function tem o return em formato de flecha, onde usamos {} se for usar lógica e () se não for usar lógica
     return (
       <div>
         <h2>A importancia da missão da nasa de descoberta de novas galaxias</h2>
