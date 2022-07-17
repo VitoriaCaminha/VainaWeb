@@ -1,3 +1,32 @@
+// Prática React 05 - map()
+
+import React, { Component } from 'react'
+
+export default class App extends Component {
+  state = {
+    cadastro: [
+      { nome: 'Vitória', idade: 24 },
+      { nome: 'Eduardo', idade: 19 },
+      { nome: 'Julio', idade: 21 },
+      { nome: 'Bianca', idade: 22 },
+      { nome: 'Danielle', idade: 25 },
+      { nome: 'Beatriz', idade: 21 },
+    ],
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.cadastro.map((item) => (
+          <p>
+            O usuário {item.nome} tem {item.idade} anos de idade.
+          </p>
+        ))}
+      </div>
+    )
+  }
+}
+
 // // Prática React 04 - Arrow function
 
 // import React, { Component } from 'react'
