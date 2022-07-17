@@ -1,29 +1,29 @@
-// Prática React 04 - Arrow function
+// // Prática React 04 - Arrow function
 
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
 
-export default class App extends Component {
-  mensagem = () => {
-    return (
-      <div>
-        <p>Mensagem a ser exibida na tela</p>
-      </div>
-    )
-  }
+// export default class App extends Component {
+//   mensagem = () => {
+//     return (
+//       <div>
+//         <p>Mensagem a ser exibida na tela</p>
+//       </div>
+//     )
+//   }
 
-  dobro = (numero) => {
-    return numero * 2
-  }
+//   dobro = (numero) => {
+//     return numero * 2
+//   }
 
-  render() {
-    return (
-      <div>
-        {this.mensagem()}
-        {this.dobro(2)}
-      </div>
-    )
-  }
-}
+//   render() {
+//     return (
+//       <div>
+//         {this.mensagem()}
+//         {this.dobro(2)}
+//       </div>
+//     )
+//   }
+// }
 
 // // Prática React 01 - Renderizando um state
 
@@ -300,3 +300,79 @@ export default class Grupo3 extends Component {
   }
 }
 */
+
+// class 17: map
+
+// import React, { Component } from 'react'
+
+// export default class Batata extends Component {
+//   state = {
+//     cadastro: [
+//       { nome: 'Julio', idade: 22, signo: 'peixes' },
+//       { nome: 'Amanda', idade: 25, signo: 'aquario' },
+//       { nome: 'Mario', idade: 21, signo: 'capricornio' },
+//       { nome: 'Eduardo', idade: 29, signo: 'leao' },
+//     ],
+//     paises: [
+//       { nome: 'Brasil', idioma: 'português' },
+//       { nome: 'Alemanha', idioma: 'alemão' },
+//       { nome: 'Japão', idioma: 'japonês' },
+//       { nome: 'Canadá', idioma: 'inglês e francês' },
+//     ],
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <nav>
+//           {this.state.cadastro.map((rastreador, index) => (
+//             <ul key={index}>
+//               <li>Clique aqui para ver o perfil do {rastreador.nome}</li>
+//               <li>
+//                 O/a {rastreador.nome} tem {rastreador.idade} anos de idade
+//               </li>
+//               <li>E é do signo de {rastreador.signo}</li>
+//             </ul>
+//           ))}
+//         </nav>
+
+//         <div>
+//           {this.state.paises.map((rastreador, index) => (
+//             <p key={index}>{rastreador.nome}</p>
+//           ))}
+//         </div>
+//       </div>
+//     )
+//   }
+// }
+
+// Crie um component de class
+
+// Agora guarde em um state informações de cadastro de pelo 3 objetos diferentes
+
+// e por ultimo faça um mapeamento dessa array de objetos e renderize na tela
+// uma frase com todos os nome e idade dos cadastros
+
+// import React, { Component } from 'react'
+
+// export default class App extends Component {
+//   state = {
+//     cadastro: [
+//       { nome: 'Aline', idade: 30, cidade: 'Rio de Janeiro' },
+//       { nome: 'Vitória', idade: 24, cidade: 'Olinda' },
+//       { nome: 'Ricardo', idade: 26, cidade: 'Barra Mansa' },
+//     ],
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         {this.state.cadastro.map((item) => (
+//           <p>
+//             Meu nome é {item.nome} e minha idade é {item.idade} anos.
+//           </p>
+//         ))}
+//       </div>
+//     )
+//   }
+// }
