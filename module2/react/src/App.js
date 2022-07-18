@@ -1,31 +1,31 @@
-// Prática React 05 - map()
+// // Prática React 05 - map()
 
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
 
-export default class App extends Component {
-  state = {
-    cadastro: [
-      { nome: 'Vitória', idade: 24 },
-      { nome: 'Eduardo', idade: 19 },
-      { nome: 'Julio', idade: 21 },
-      { nome: 'Bianca', idade: 22 },
-      { nome: 'Danielle', idade: 25 },
-      { nome: 'Beatriz', idade: 21 },
-    ],
-  }
+// export default class App extends Component {
+//   state = {
+//     cadastro: [
+//       { nome: 'Vitória', idade: 24 },
+//       { nome: 'Eduardo', idade: 19 },
+//       { nome: 'Julio', idade: 21 },
+//       { nome: 'Bianca', idade: 22 },
+//       { nome: 'Danielle', idade: 25 },
+//       { nome: 'Beatriz', idade: 21 },
+//     ],
+//   }
 
-  render() {
-    return (
-      <div>
-        {this.state.cadastro.map((item) => (
-          <p>
-            O usuário {item.nome} tem {item.idade} anos de idade.
-          </p>
-        ))}
-      </div>
-    )
-  }
-}
+//   render() {
+//     return (
+//       <div>
+//         {this.state.cadastro.map((item) => (
+//           <p>
+//             O usuário {item.nome} tem {item.idade} anos de idade.
+//           </p>
+//         ))}
+//       </div>
+//     )
+//   }
+// }
 
 // // Prática React 04 - Arrow function
 
@@ -400,6 +400,92 @@ export default class Grupo3 extends Component {
 //           <p>
 //             Meu nome é {item.nome} e minha idade é {item.idade} anos.
 //           </p>
+//         ))}
+//       </div>
+//     )
+//   }
+// }
+
+// class 18: Revisão
+
+// import React, { Component } from 'react'
+
+// class Batata extends Component {
+//   Soma = () => 5 + 8
+
+//   Texto = () => {
+//     return (
+//       <div>
+//         <p> Eu Gosto de Batata</p>
+//         <p> Com batata eu tenho fonte de caboidrato</p>
+//       </div>
+//     )
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <h1> Revisão Ts.2</h1>
+//         <p> {this.Soma()} </p>
+//         {this.Texto()}
+//       </div>
+//     )
+//   }
+// }
+// export default Batata
+
+// import React, { Component } from 'react'
+
+// export default class Mapa extends Component {
+//   state = {
+//     Dados: [
+//       {
+//         nome: 'Luis And',
+//         telefone: '2222222222',
+//         cidade: 'Rj',
+//         cpf: '333.1544.827-77',
+//         idade: '20',
+//         Hobby: 'Músico',
+//       },
+//       {
+//         nome: 'João Belo',
+//         telefone: '56464646464',
+//         cidade: 'MG',
+//         cpf: '656.565.987.11',
+//         idade: '19',
+//         Hobby: 'Fazer café',
+//       },
+//       {
+//         nome: 'Robert j.',
+//         telefone: '115454545454',
+//         cidade: 'Recife',
+//         cpf: '412.987.359-41',
+//         idade: '18',
+//         Hobby: 'viver na lagoa',
+//       },
+//       {
+//         nome: 'Jefferson',
+//         telefone: '6398987451',
+//         cidade: 'Sp',
+//         cpf: '454.565.982.98',
+//         idade: '28',
+//         Hobby: 'jogar bola',
+//       },
+//     ],
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         {this.state.Dados.map((item) => (
+//           <div>
+//             <h1>Dados:</h1>
+//             <p>
+//               Meu nome é {item.nome}, meu cpf é {item.cpf}, moro em{' '}
+//               {item.cidade} meu telefone {item.telefone} minha idade{' '}
+//               {item.idade}, meu hobby {item.Hobby}
+//             </p>
+//           </div>
 //         ))}
 //       </div>
 //     )
