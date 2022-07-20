@@ -491,3 +491,79 @@ export default class Grupo3 extends Component {
 //     )
 //   }
 // }
+
+// class 19: setState
+
+// import React, { Component } from 'react'
+// import './index.css'
+
+// export default class Contador extends Component {
+//   state = {
+//     count: 0,
+//   }
+
+//   Add = () => {
+//     this.setState({
+//       count: this.state.count + 1,
+//       body: (document.body.style.backgroundColor = 'blue'),
+//       letra: (document.body.style.color = 'red'),
+//     })
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <h1>Vamos criar um contador</h1>
+//         <p>{this.state.count}</p>
+//         <button onClick={this.Add}>+1</button>
+//       </div>
+//     )
+//   }
+// }
+
+// import React from 'react'
+
+// export default class mudar extends React.Component {
+//   state = {
+//     nome: 'Leno Rafael',
+//   }
+
+//   mudanca = () => {
+//     this.setState({
+//       nome: 'David Henrique',
+//     })
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <h1>O meu nome é {this.state.nome}</h1>
+//         <button onClick={this.mudanca}>Mudar</button>
+//       </div>
+//     )
+//   }
+// }
+
+import React from 'react'
+
+export default class App extends React.Component {
+  state = {
+    nome: 'David',
+  }
+
+  socorro = () => {
+    this.setState({
+      nome: 'Jordan',
+      cor: (document.body.style.color = 'blue'),
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>{this.state.nome}</h2>
+        <button onClick={this.socorro}>mudar nome</button>
+      </div>
+    )
+  }
+}
