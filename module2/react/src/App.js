@@ -544,26 +544,179 @@ export default class Grupo3 extends Component {
 //   }
 // }
 
-import React from 'react'
+// import React from 'react'
 
-export default class App extends React.Component {
-  state = {
-    nome: 'David',
-  }
+// export default class App extends React.Component {
+//   state = {
+//     nome: 'David',
+//   }
 
-  socorro = () => {
-    this.setState({
-      nome: 'Jordan',
-      cor: (document.body.style.color = 'blue'),
-    })
-  }
+//   socorro = () => {
+//     this.setState({
+//       nome: 'Jordan',
+//       cor: (document.body.style.color = 'blue'),
+//     })
+//   }
 
-  render() {
-    return (
-      <div>
-        <h2>{this.state.nome}</h2>
-        <button onClick={this.socorro}>mudar nome</button>
-      </div>
-    )
-  }
-}
+//   render() {
+//     return (
+//       <div>
+//         <h2>{this.state.nome}</h2>
+//         <button onClick={this.socorro}>mudar nome</button>
+//       </div>
+//     )
+//   }
+// }
+
+// class 20: setState 2
+
+// import React, { Component } from 'react'
+
+// export default class Contador extends Component {
+//   state = {
+//     numero: 0,
+//   }
+
+//   Add = () => {
+//     if (this.state.numero < 20) {
+//       this.setState({
+//         numero: this.state.numero + 1,
+//       })
+//     }
+//   }
+
+//   Remove = () => {
+//     this.setState({
+//       numero: this.state.numero - 1,
+//     })
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <h1>Vamos fazer um contador</h1>
+//         <p>{this.state.numero}</p>
+//         <button onClick={this.Add}>+1</button>
+//         <button onClick={this.Remove}>-1</button>
+//       </div>
+//     )
+//   }
+// }
+
+// import React, { Component } from 'react'
+
+// export default class Mudanca extends Component {
+//   state = {
+//     nome: 'Leno',
+//   }
+
+//   outroNome = () => {
+// if (this.state.nome === 'Leno') {
+//   this.setState({
+//     nome: 'Pamela',
+//     cor: (document.querySelector('p').style.fontSize = '30px'),
+//   })
+// } else {
+//   this.setState({
+//     nome: 'Leno',
+//   })
+// }
+
+// Operador ternário
+
+//     this.state.nome === 'Leno'
+//       ? this.setState({ nome: 'Pamela' })
+//       : this.setState({ nome: 'Leno' })
+//   }
+
+//   render() {
+//     return (
+//       <>
+//         <p>{this.state.nome}</p>
+//         <button onClick={this.outroNome}>Troca</button>
+//       </>
+//     )
+//   }
+// }
+
+//Crie um component de class
+//Crie um state com 3 propriedades nome, idade, musica favorita
+//mude o estado das propriedades com um evento e
+//crie uma condicional para fazer voltar ao estado inicial no mesmo botão mude a cor dos elementos
+
+// import React, { Component } from 'react'
+
+// export default class Pessoa extends Component {
+//   state = {
+//     nome: 'Daniel',
+//     idade: 25,
+//     musicaFavorita: 'Rebolation',
+//   }
+
+//   Mudar = () => {
+//     this.state.nome === 'Daniel'
+//       ? this.setState({
+//           nome: 'Dyana',
+//           idade: 21,
+//           musicaFavorita: 'Pagode',
+//           cor: (document.body.style.color = 'gray'),
+//         })
+//       : this.setState({
+//           nome: 'Daniel',
+//           idade: 25,
+//           musicaFavorita: 'Rebolation',
+//           cor: (document.body.style.color = 'black'),
+//         })
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <h1>Mudança de dados</h1>
+//         <p>{this.state.nome}</p>
+//         <p>{this.state.idade}</p>
+//         <p>{this.state.musicaFavorita}</p>
+//         <button onClick={this.Mudar}>Mudar</button>
+//       </div>
+//     )
+//   }
+// }
+
+// Mentoria: responsividade
+
+// import React, { Component } from 'react'
+// import './App.css'
+
+// export default class Leandro extends Component {
+//   state = {
+//     nome: 'Restaurante',
+//     menu: ['inicio', 'sobre', 'contatos'],
+//   }
+
+//   render() {
+//     return (
+//       <>
+//         <header>
+//           <img
+//             className="logo"
+//             src="https://dnxstorage.blob.core.windows.net/gruporequinte/Blog/UrlFotoPequena3..png"
+//             alt="logo"
+//           />
+//           <nav>
+//             <ul>
+//               {this.state.menu.map((item, index) => (
+//                 <li key={index}>{item}</li>
+//               ))}
+//             </ul>
+//             <img
+//               className="menu"
+//               src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png"
+//               alt="menu"
+//             />
+//           </nav>
+//         </header>
+//         <main></main>
+//       </>
+//     )
+//   }
+// }
