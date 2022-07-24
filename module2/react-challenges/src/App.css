@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div {
+  background: #1e1e1e;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  width: 50vw;
+}
+
+h1 {
+  text-align: center;
+  width: 90%;
+  color: rgb(247, 243, 231);
+  font-size: clamp(2rem, 1rem + 5vw, 4rem);
+}
+
+p {
+  text-align: center;
+  width: 90%;
+  font-size: clamp(0.5rem, 0.5rem + 2vw, 1.3rem);
+  color: rgb(173, 181, 187);
+}
+
+.counter {
+  border: 3px solid rgb(218, 215, 215);
+  border-radius: 5px;
+  width: 45%;
+  text-align: center;
+}
+
+h2 {
+  font-size: 15vw;
+  width: 20vw;
+  margin: auto;
+}
+
+button {
+  height: 5vh;
+  width: 10vw;
+  margin: 3vh 1vh 7vh;
+  border-radius: 5px;
+  border: none;
+  font-size: 5vh;
+  cursor: pointer;
+}
+
+.counter :nth-child(2) {
+  background-color: rgb(77, 138, 77);
+}
+
+.counter :nth-child(3) {
+  background-color: rgb(160, 68, 68);
+}
+
+footer {
+  height: 3vh;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(52, 58, 52, 0.253);
+  text-align: center;
+}
+
+h2,
+h3 {
+  color: rgb(117, 117, 131);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(37, 37, 255);
+}
+
+h3 {
+  font-size: 2vh;
+}
+
+@media (max-width: 450px) {
+  div {
+    flex-direction: column;
+  }
+
+  .counter {
+    height: 26%;
+    width: 80%;
+    margin-top: 5vh;
+  }
+
+  h2 {
+    margin-top: 3vh;
+    font-size: 17vw;
+  }
+
+  button {
+    margin: 3vh 1vh;
+  }
+}
