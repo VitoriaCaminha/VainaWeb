@@ -38,15 +38,24 @@ ul {
 
 .menu {
   display: none;
+  border: none;
+  background-color: rgb(186, 224, 226);
+  font-size: 20px;
 }
 
-@media(max-width: 600px) {
-  ul {
+@media (max-width: 600px) {
+  .menuOpen {
+    display: initial;
+    transition: ease-in-out 1s;
+  }
+
+  .close {
     display: none;
   }
 
   .menu {
     display: initial;
     width: 20px;
+    transition: ease-in-out 1s;
   }
 }
