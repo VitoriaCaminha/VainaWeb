@@ -720,3 +720,30 @@ export default class Grupo3 extends Component {
 //     )
 //   }
 // }
+
+// class 21: styled-components
+
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import Main from './components/Main'
+
+const Container = styled.div`
+  border: solid;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    font-size: 40px;
+  }
+`
+
+export default class Calculadora extends Component {
+  render() {
+    return (
+      <Container>
+        <Main />
+      </Container>
+    )
+  }
+}
