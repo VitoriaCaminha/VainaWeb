@@ -56,44 +56,117 @@
 //   }
 // }
 
-import React from 'react'
+// import React from 'react'
 
-export default class Main extends React.Component {
+// export default class Main extends React.Component {
+//   state = {
+//     n1: '',
+//     n2: '',
+//     result: 0,
+//   }
+
+//   Change = (event) => {
+//     this.setState({
+//       n1: Number(event.target.value),
+//     })
+//   }
+
+//   Change2 = (event) => {
+//     this.setState({
+//       n2: Number(event.target.value),
+//     })
+//   }
+
+//   Somar = () => {
+//     const { n1, n2 } = this.state
+//     this.setState({
+//       result: n1 + n2,
+//       n1: '',
+//       n2: '',
+//     })
+//   }
+
+//   render() {
+//     return (
+//       <>
+//         <input type="number" value={this.state.n1} onChange={this.Change} />
+//         <input type="number" value={this.state.n2} onChange={this.Change2} />
+//         <button onClick={this.Somar}>Somar</button>
+//         <p>{this.state.result}</p>
+//       </>
+//     )
+//   }
+// }
+
+import React, { Component } from 'react'
+
+export default class Main extends Component {
   state = {
-    n1: '',
+    n1: '', // o : se chama 'transforma'
     n2: '',
     result: 0,
   }
 
-  Change = (event) => {
+  handleChange = (event) => {
     this.setState({
       n1: Number(event.target.value),
     })
   }
 
-  Change2 = (event) => {
+  handleChange2 = (event) => {
     this.setState({
       n2: Number(event.target.value),
     })
   }
 
-  Somar = () => {
+  multi = () => {
+    const { n1, n2 } = this.state
+    this.setState({
+      result: n1 * n2,
+    })
+  }
+
+  divi = () => {
+    const { n1, n2 } = this.state
+    this.setState({
+      result: n1 / n2,
+    })
+  }
+
+  soma = () => {
     const { n1, n2 } = this.state
     this.setState({
       result: n1 + n2,
+    })
+  }
+
+  sub = () => {
+    const { n1, n2 } = this.state
+    this.setState({
+      result: n1 - n2,
+    })
+  }
+
+  clear = () => {
+    this.setState({
       n1: '',
       n2: '',
+      result: 0,
     })
   }
 
   render() {
     return (
-      <>
-        <input type="number" value={this.state.n1} onChange={this.Change} />
-        <input type="number" value={this.state.n2} onChange={this.Change2} />
-        <button onClick={this.Somar}>Somar</button>
+      <div>
+        <input onChange={this.handleChange} value={this.state.n1} type='number' />
+        <input onChange={this.handleChange2} value={this.state.n2} type='number' />
         <p>{this.state.result}</p>
-      </>
+        <button onClick={this.multi}>multiplicar</button>
+        <button onClick={this.divi}>Dividir</button>
+        <button onClick={this.soma}>Somar</button>
+        <button onClick={this.sub}>Subtrair</button>
+        <button onClick={this.clear}>Limpar</button>
+      </div>
     )
   }
 }

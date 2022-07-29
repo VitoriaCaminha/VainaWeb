@@ -711,18 +711,35 @@ export default class Grupo3 extends Component {
 
 // class 22: styled-components
 
+// import React, { Component } from 'react'
+// import Header from './components/Header.js'
+// import Main from './components/Main.js'
+// import './App.css'
+
+// export default class Calc extends Component {
+//   render() {
+//     return (
+//       <>
+//         <Header />
+//         <Main />
+//       </>
+//     )
+//   }
+// }
+
+// class 23: revisão
+
 import React, { Component } from 'react'
 import Header from './components/Header.js'
 import Main from './components/Main.js'
-import './App.css'
 
-export default class Calc extends Component {
+export default class App extends Component {
   render() {
     return (
-      <>
+      <div>
         <Header />
         <Main />
-      </>
+      </div>
     )
   }
 }
