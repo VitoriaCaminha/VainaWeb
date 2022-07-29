@@ -12,6 +12,10 @@ const Entry = styled.input`
   padding-left: 1vh;
   color: #bbb;
   margin-top: 2vh;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
 `
 
 const Box = styled.div`
