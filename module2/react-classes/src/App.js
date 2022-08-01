@@ -729,17 +729,77 @@ export default class Grupo3 extends Component {
 
 // class 23: revisão
 
-import React, { Component } from 'react'
-import Header from './components/Header.js'
-import Main from './components/Main.js'
+// import React, { Component } from 'react'
+// import Header from './components/Header.js'
+// import Main from './components/Main.js'
 
-export default class App extends Component {
+// export default class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <Header />
+//         <Main />
+//       </div>
+//     )
+//   }
+// }
+
+// class 24: To do
+
+// import React, { Component } from 'react'
+
+// export default class Filter extends Component {
+//   state = {
+//     pessoas: [
+//       { nome: 'Leno', idade: 15 },
+//       { nome: 'João', idade: 20 },
+//       { nome: 'Valeria', idade: 16 },
+//       { nome: 'Pamela', idade: 18 },
+//       { nome: 'Kelly', idade: 29 },
+//     ],
+//     deMaior: [],
+//   }
+
+//   maiores = () =>
+//     this.setState({
+//       deMaior: this.state.pessoas.filter((element) => {
+//         return element.idade >= 18
+//       }),
+//     })
+
+//   render() {
+//     return (
+//       <div>
+//         <h1>Vamos filtrar uma lista</h1>
+//         {/* O map é um método de array, que percorre uma array e retorna o que pedi em uma nova array */}
+//         {this.state.pessoas.map((item) => (
+//           <ul>
+//             <li>{item.nome}</li>
+//             <li>{item.idade}</li>
+//           </ul>
+//         ))}
+//         <button onClick={this.maiores}>Filtrar</button>
+//         <h2>Apenas os maiores de idade</h2>
+//         {this.state.deMaior.map((item) => (
+//           <ul>
+//             <li>{item.nome}</li>
+//             <li>{item.idade}</li>
+//           </ul>
+//         ))}
+//       </div>
+//     )
+//   }
+// }
+
+import React, { Component } from 'react'
+import Main from './components/Main'
+
+export default class ToDo extends Component {
   render() {
     return (
-      <div>
-        <Header />
+      <>
         <Main />
-      </div>
+      </>
     )
   }
 }

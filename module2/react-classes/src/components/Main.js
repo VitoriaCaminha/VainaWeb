@@ -1,6 +1,8 @@
 // import React, { Component } from 'react'
 // import styled from 'styled-components'
 
+import React from 'react'
+
 // const Container = styled.div`
 //   background-color: blue;
 //   width: 20%;
@@ -98,75 +100,114 @@
 //   }
 // }
 
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
 
-export default class Main extends Component {
+// export default class Main extends Component {
+//   state = {
+//     n1: '', // o : se chama 'transforma'
+//     n2: '',
+//     result: 0,
+//   }
+
+//   handleChange = (event) => {
+//     this.setState({
+//       n1: Number(event.target.value),
+//     })
+//   }
+
+//   handleChange2 = (event) => {
+//     this.setState({
+//       n2: Number(event.target.value),
+//     })
+//   }
+
+//   multi = () => {
+//     const { n1, n2 } = this.state
+//     this.setState({
+//       result: n1 * n2,
+//     })
+//   }
+
+//   divi = () => {
+//     const { n1, n2 } = this.state
+//     this.setState({
+//       result: n1 / n2,
+//     })
+//   }
+
+//   soma = () => {
+//     const { n1, n2 } = this.state
+//     this.setState({
+//       result: n1 + n2,
+//     })
+//   }
+
+//   sub = () => {
+//     const { n1, n2 } = this.state
+//     this.setState({
+//       result: n1 - n2,
+//     })
+//   }
+
+//   clear = () => {
+//     this.setState({
+//       n1: '',
+//       n2: '',
+//       result: 0,
+//     })
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <input onChange={this.handleChange} value={this.state.n1} type='number' />
+//         <input onChange={this.handleChange2} value={this.state.n2} type='number' />
+//         <p>{this.state.result}</p>
+//         <button onClick={this.multi}>multiplicar</button>
+//         <button onClick={this.divi}>Dividir</button>
+//         <button onClick={this.soma}>Somar</button>
+//         <button onClick={this.sub}>Subtrair</button>
+//         <button onClick={this.clear}>Limpar</button>
+//       </div>
+//     )
+//   }
+// }
+
+export default class Main extends React.Component {
   state = {
-    n1: '', // o : se chama 'transforma'
-    n2: '',
-    result: 0,
+    compras: '',
+    listaDeCompras: [],
+  }
+
+  handleClick = () => {
+    this.setState({
+      listaDeCompras: this.state.listaDeCompras.concat({
+        compras: this.state.compras,
+      }),
+    })
   }
 
   handleChange = (event) => {
     this.setState({
-      n1: Number(event.target.value),
+      compras: event.target.value,
     })
   }
 
-  handleChange2 = (event) => {
-    this.setState({
-      n2: Number(event.target.value),
-    })
-  }
-
-  multi = () => {
-    const { n1, n2 } = this.state
-    this.setState({
-      result: n1 * n2,
-    })
-  }
-
-  divi = () => {
-    const { n1, n2 } = this.state
-    this.setState({
-      result: n1 / n2,
-    })
-  }
-
-  soma = () => {
-    const { n1, n2 } = this.state
-    this.setState({
-      result: n1 + n2,
-    })
-  }
-
-  sub = () => {
-    const { n1, n2 } = this.state
-    this.setState({
-      result: n1 - n2,
-    })
-  }
-
-  clear = () => {
-    this.setState({
-      n1: '',
-      n2: '',
-      result: 0,
-    })
-  }
-
+  handle
   render() {
     return (
-      <div>
-        <input onChange={this.handleChange} value={this.state.n1} type='number' />
-        <input onChange={this.handleChange2} value={this.state.n2} type='number' />
-        <p>{this.state.result}</p>
-        <button onClick={this.multi}>multiplicar</button>
-        <button onClick={this.divi}>Dividir</button>
-        <button onClick={this.soma}>Somar</button>
-        <button onClick={this.sub}>Subtrair</button>
-        <button onClick={this.clear}>Limpar</button>
-      </div>
+      <>
+        <h1>Lista de tarefas</h1>
+        <div>
+          <input onChange={this.handleChange} />
+          <button onClick={this.handleClick}>Enviar</button>
+          {this.state.listaDeCompras.map((item) => (
+            <ul>
+              <li>{item.compras}</li>
+            </ul>
+          ))}
+        </div>
+      </>
     )
   }
 }
