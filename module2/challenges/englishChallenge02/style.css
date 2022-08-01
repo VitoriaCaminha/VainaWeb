@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Source+Sans+Pro:ital,wght@1,200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1b641;
+  width: 90%;
+  margin: auto;
+}
+
+header {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: italic;
+  font-size: 25px;
+  margin: 2vh;
+  padding: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+  background-color: #ffecc0;
+}
+
+header img {
+  width: 25px;
+}
+
+main {
+  font-family: 'Nanum Gothic', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 120vh;
+}
+
+main h1,
+h3,
+button {
+  text-transform: uppercase;
+}
+
+.passion {
+  display: flex;
+  justify-content: space-between;
+}
+
+.passion h1 {
+  font-size: 6vh;
+  font-weight: 800;
+}
+
+.passion h2 {
+  font-weight: 700;
+  font-size: 5.5vh;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cart {
+  border: 1px solid #000000;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1vh 2vh;
+}
+
+.cart button {
+  font-size: 20px;
+  border: none;
+  background-color: #f1b641;
+}
+
+.add {
+  margin-bottom: 25px;
+  background-color: #000000;
+  color: #f1b641;
+  padding: 1.5vh;
+  font-size: 15px;
+  border-radius: 25px;
+}
