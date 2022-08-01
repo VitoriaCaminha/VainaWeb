@@ -20,13 +20,18 @@ const Entry = styled.input`
 
 const Box = styled.div`
   display: flex;
-  width: 60vw;
+  width: 700px;
   justify-content: space-between;
 
   @media (max-width: 900px) {
     flex-direction: column;
     align-items: center;
     gap: 1vh;
+    width: 250px;
+
+    button {
+      width: 40%;
+    }
   }
 `
 const Buttons = styled.button`
@@ -34,7 +39,7 @@ const Buttons = styled.button`
   border-radius: 3px;
   background-color: #bbb;
   font-size: 2vh;
-  width: 10vw;
+  width: 18%;
   height: 4vh;
 `
 
