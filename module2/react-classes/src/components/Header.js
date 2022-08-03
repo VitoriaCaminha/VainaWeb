@@ -47,14 +47,14 @@
 //   }
 // }
 
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
 
-export default class Header extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Calculadora</h1>
-      </div>
-    )
-  }
-}
+// export default class Header extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <h1>Calculadora</h1>
+//       </div>
+//     )
+//   }
+// }

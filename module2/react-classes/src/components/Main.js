@@ -1,7 +1,7 @@
 // import React, { Component } from 'react'
 // import styled from 'styled-components'
 
-import React from 'react'
+// import React from 'react'
 
 // const Container = styled.div`
 //   background-color: blue;
@@ -173,37 +173,100 @@ import React from 'react'
 //   }
 // }
 
-export default class Main extends React.Component {
-  state = {
-    compras: '',
-    listaDeCompras: [],
-  }
+// export default class Main extends React.Component {
+//   state = {
+//     compras: '',
+//     listaDeCompras: [],
+//   }
 
-  handleClick = () => {
-    this.setState({
-      listaDeCompras: this.state.listaDeCompras.concat({
-        compras: this.state.compras,
-      }),
-    })
+//   handleClick = () => {
+//     this.setState({
+//       listaDeCompras: this.state.listaDeCompras.concat({
+//         compras: this.state.compras,
+//       }),
+//     })
+//   }
+
+//   handleChange = (event) => {
+//     this.setState({
+//       compras: event.target.value,
+//     })
+//   }
+
+//   handle
+//   render() {
+//     return (
+//       <>
+//         <h1>Lista de tarefas</h1>
+//         <div>
+//           <input onChange={this.handleChange} />
+//           <button onClick={this.handleClick}>Enviar</button>
+//           {this.state.listaDeCompras.map((item) => (
+//             <ul>
+//               <li>{item.compras}</li>
+//             </ul>
+//           ))}
+//         </div>
+//       </>
+//     )
+//   }
+// }
+
+import React, { Component } from 'react'
+
+// Função: conjunto de instruções que podem ou não ter condições para a realização de uma tarefa
+
+export default class Main extends Component {
+  state = {
+    task: '',
+    TaskList: [],
   }
 
   handleChange = (event) => {
     this.setState({
-      compras: event.target.value,
+      task: event.target.value,
     })
   }
 
-  handle
+  handleClick = () => {
+    this.setState({
+      TaskList: this.state.TaskList.concat({
+        task: this.state.task,
+        // id: Date.now(),
+        id: Math.random(),
+      }),
+      task: '',
+    })
+  }
+
+  remover = (id) => {
+    this.setState({
+      TaskList: this.state.TaskList.filter((item) => item.id !== id),
+    })
+  }
+
   render() {
     return (
       <>
-        <h1>Lista de tarefas</h1>
+        <h1>Lista de Tarefas</h1>
+        <input
+          type="text"
+          value={this.state.task}
+          onChange={this.handleChange}
+        />
+        {/* onChange é um evento */}
+        <button onClick={this.handleClick}>Enviar</button>
         <div>
-          <input onChange={this.handleChange} />
-          <button onClick={this.handleClick}>Enviar</button>
-          {this.state.listaDeCompras.map((item) => (
-            <ul>
-              <li>{item.compras}</li>
+          {this.state.TaskList.map((item, index) => (
+            <ul key={index}>
+              <li>{item.task}</li>
+              <button
+                onClick={() => {
+                  this.remover(item.id)
+                }}
+              >
+                Remover
+              </button>
             </ul>
           ))}
         </div>
@@ -211,3 +274,6 @@ export default class Main extends React.Component {
     )
   }
 }
+
+// Fazer não adicionar task vazia e fazer adicionar com enter
+// usar if/else e usar método que vem junto com event para enviar com enter

@@ -791,6 +791,21 @@ export default class Grupo3 extends Component {
 //   }
 // }
 
+// import React, { Component } from 'react'
+// import Main from './components/Main'
+
+// export default class ToDo extends Component {
+//   render() {
+//     return (
+//       <>
+//         <Main />
+//       </>
+//     )
+//   }
+// }
+
+// class 25: ToDo
+
 import React, { Component } from 'react'
 import Main from './components/Main'
 
@@ -798,7 +813,7 @@ export default class ToDo extends Component {
   render() {
     return (
       <>
-        <Main />
+      <Main />
       </>
     )
   }
