@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Source+Sans+Pro:ital,wght@1,200&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800;900&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -30,11 +29,12 @@ header img {
 }
 
 main {
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Roboto Slab', serif;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 120vh;
+  font-weight: 900;
 }
 
 main h1,
@@ -44,12 +44,14 @@ button {
 }
 
 .passion {
+  border: solid;
   display: flex;
   justify-content: space-between;
 }
 
 .passion h1 {
-  font-size: 6vh;
+  /* font-size: 6vh; */
+  font-size: 3rem;
   font-weight: 800;
 }
 
@@ -60,7 +62,14 @@ button {
 
 ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 70%;
+  border: solid;
+  padding-left: 3vw;
+}
+
+.circle {
+  list-style: circle;
 }
 
 .cart {
@@ -69,6 +78,7 @@ ul {
   display: flex;
   justify-content: space-between;
   padding: 1vh 2vh;
+  /* height: 5vh; */
 }
 
 .cart button {
