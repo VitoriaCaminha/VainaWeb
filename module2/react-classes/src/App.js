@@ -806,15 +806,31 @@ export default class Grupo3 extends Component {
 
 // class 25: ToDo
 
+// import React, { Component } from 'react'
+// import Main from './components/Main'
+
+// export default class ToDo extends Component {
+//   render() {
+//     return (
+//       <>
+//       <Main />
+//       </>
+//     )
+//   }
+// }
+
+// class 26: ToDo
+
 import React, { Component } from 'react'
 import Main from './components/Main'
 
 export default class ToDo extends Component {
   render() {
     return (
-      <>
-      <Main />
-      </>
+      <div>
+        <h1>Lista de Filmes</h1>
+        <Main />
+      </div>
     )
   }
 }

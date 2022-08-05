@@ -212,68 +212,140 @@
 //   }
 // }
 
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
 
-// Função: conjunto de instruções que podem ou não ter condições para a realização de uma tarefa
+// // Função: conjunto de instruções que podem ou não ter condições para a realização de uma tarefa
+
+// export default class Main extends Component {
+//   state = {
+//     task: '',
+//     TaskList: [],
+//   }
+
+//   handleChange = (event) => {
+//     this.setState({
+//       task: event.target.value,
+//     })
+//   }
+
+//   handleClick = () => {
+//     this.setState({
+//       TaskList: this.state.TaskList.concat({
+//         task: this.state.task,
+//         // id: Date.now(),
+//         id: Math.random(),
+//       }),
+//       task: '',
+//     })
+//   }
+
+//   remover = (id) => {
+//     this.setState({
+//       TaskList: this.state.TaskList.filter((item) => item.id !== id),
+//     })
+//   }
+
+//   render() {
+//     return (
+//       <>
+//         <h1>Lista de Tarefas</h1>
+//         <input
+//           type="text"
+//           value={this.state.task}
+//           onChange={this.handleChange}
+//         />
+//         {/* onChange é um evento */}
+//         <button onClick={this.handleClick}>Enviar</button>
+//         <div>
+//           {this.state.TaskList.map((item, index) => (
+//             <ul key={index}>
+//               <li>{item.task}</li>
+//               <button
+//                 onClick={() => {
+//                   this.remover(item.id)
+//                 }}
+//               >
+//                 Remover
+//               </button>
+//             </ul>
+//           ))}
+//         </div>
+//       </>
+//     )
+//   }
+// }
+
+// Fazer não adicionar task vazia e fazer adicionar com enter
+// usar if/else e usar método que vem junto com event para enviar com enter
+
+import React, { Component } from 'react'
 
 export default class Main extends Component {
   state = {
-    task: '',
-    TaskList: [],
+    filme: '',
+    listaDeFilmes: [],
   }
 
   handleChange = (event) => {
     this.setState({
-      task: event.target.value,
+      filme: event.target.value,
     })
   }
 
-  handleClick = () => {
+  Send = (event) => {
+    // event.preventDefault() // Forma certa, mas menos semântica
+    if (this.state.filme !== '') {
+      this.setState({
+        listaDeFilmes: this.state.listaDeFilmes.concat({
+          filme: this.state.filme,
+          id: Date.now(),
+        }),
+        filme: '',
+      })
+    }
+  }
+
+  // Filter filtra as informações de uma array para outra de acordo com uma condição, sem alterar a primeira array
+
+  Remove = (id) => {
     this.setState({
-      TaskList: this.state.TaskList.concat({
-        task: this.state.task,
-        // id: Date.now(),
-        id: Math.random(),
-      }),
-      task: '',
+      listaDeFilmes: this.state.listaDeFilmes.filter(
+        (ident) => ident.id !== id,
+      ),
     })
   }
 
-  remover = (id) => {
+  RemoveAll = (id) => {
     this.setState({
-      TaskList: this.state.TaskList.filter((item) => item.id !== id),
+      listaDeFilmes: this.state.listaDeFilmes.filter(
+        (ident) => ident.listaDeFilmes,
+      ),
     })
-  }
+  } // Inicio do botão que apaga tudo
 
   render() {
     return (
-      <>
-        <h1>Lista de Tarefas</h1>
-        <input
-          type="text"
-          value={this.state.task}
-          onChange={this.handleChange}
-        />
-        {/* onChange é um evento */}
-        <button onClick={this.handleClick}>Enviar</button>
-        <div>
-          {this.state.TaskList.map((item, index) => (
-            <ul key={index}>
-              <li>{item.task}</li>
-              <button
-                onClick={() => {
-                  this.remover(item.id)
-                }}
-              >
-                Remover
-              </button>
-            </ul>
-          ))}
-        </div>
-      </>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+        }} // Forma mais semântica
+      >
+        <input value={this.state.filme} onChange={this.handleChange} />
+        <button onClick={this.Send}>Send</button>
+        <button onClick={() => this.RemoveAll()}>X</button>
+        {this.state.listaDeFilmes.map((item) => (
+          <ol>
+            <li>{item.filme}</li>
+            <button
+              onClick={() => {
+                this.Remove(item.id)
+              }}
+            >
+              X
+            </button>
+          </ol>
+        ))}
+      </form>
     )
   }
 }
-
-// Fazer não adicionar task vazia e fazer adicionar com enter
-// usar if/else e usar método que vem junto com event para enviar com enter
