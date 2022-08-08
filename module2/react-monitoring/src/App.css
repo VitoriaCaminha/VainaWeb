@@ -1,10 +1,10 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
-header {
+/* header {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -13,30 +13,30 @@ header {
   width: 100%;
   margin: auto;
   background-color: rgb(186, 224, 226);
-}
+} */
 
 
-.logo {
+/* .logo {
   width: 20vw;
-}
+} */
 
-ul {
+/* ul {
   display: flex;
   list-style: none;
   width: 30vw;
   border: solid;
   justify-content: space-between;
   text-transform: capitalize;
-}
+} */
 
-.menu {
+/* .menu {
   display: none;
   border: none;
   background-color: rgb(186, 224, 226);
   font-size: 20px;
-}
+} */
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .menuOpen {
     display: initial;
     transition: ease-in-out 1s;
@@ -51,4 +51,13 @@ ul {
     width: 20px;
     transition: ease-in-out 1s;
   }
-}
+} */
+
+/* .diminuir {
+  transform: scale(0.1%);
+  transition: ease-in-out 0.5s;
+} */
+
+/* .crescer {
+  transform: scale(100%);
+} */
