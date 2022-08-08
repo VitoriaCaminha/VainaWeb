@@ -821,16 +821,72 @@ export default class Grupo3 extends Component {
 
 // class 26: ToDo
 
-import React, { Component } from 'react'
-import Main from './components/Main'
+// import React, { Component } from 'react'
+// import Main from './components/Main'
 
-export default class ToDo extends Component {
+// export default class ToDo extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <h1>Lista de Filmes</h1>
+//         <Main />
+//       </div>
+//     )
+//   }
+// }
+
+// class 27: props
+
+// import React, { Component } from 'react'
+// import Header from './components/Header/Header'
+// import Login from '../src/components/image/fundoModulo2.jpeg'
+// import { createGlobalStyle } from 'styled-components'
+// import { Main } from './components/Main/Main'
+
+// const GlobalStyle = createGlobalStyle`
+// @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+// body{
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   font-family: 'Orbitron', sans-serif;
+//   background-color: teal;
+// }
+// `
+
+// export default class App extends Component {
+//   render() {
+//     return (
+//       <>
+//         <GlobalStyle />
+//         <h1>Componente principal</h1>
+//         <Header
+//           subtitulo="eu sou um subtitulo"
+//           logo={Login}
+//           lista="Inicio"
+//           lista2="Sobre"
+//           lista3="Contatos"
+//         />
+//         <Main caixa='eu sou um h3'>
+//           <h4>eu sou um filho</h4>
+//           <button>eu sou um botão</button>
+//         </Main>
+//       </>
+//     )
+//   }
+// }
+
+import React, { Component } from 'react'
+import Main from './components/Main/Main.js'
+
+export default class App extends Component {
   render() {
     return (
-      <div>
-        <h1>Lista de Filmes</h1>
-        <Main />
-      </div>
+      <>
+        <Main grupo2="Debora, Dheniffe, Isaque, Hamom, Gabriel, Kelly, Jefferson, Aline, Vitória">
+          <h2>Olá</h2>
+        </Main>
+      </>
     )
   }
 }

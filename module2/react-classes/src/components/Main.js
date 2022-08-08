@@ -278,74 +278,74 @@
 // Fazer não adicionar task vazia e fazer adicionar com enter
 // usar if/else e usar método que vem junto com event para enviar com enter
 
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
 
-export default class Main extends Component {
-  state = {
-    filme: '',
-    listaDeFilmes: [],
-  }
+// export default class Main extends Component {
+//   state = {
+//     filme: '',
+//     listaDeFilmes: [],
+//   }
 
-  handleChange = (event) => {
-    this.setState({
-      filme: event.target.value,
-    })
-  }
+//   handleChange = (event) => {
+//     this.setState({
+//       filme: event.target.value,
+//     })
+//   }
 
-  Send = (event) => {
-    // event.preventDefault() // Forma certa, mas menos semântica
-    if (this.state.filme !== '') {
-      this.setState({
-        listaDeFilmes: this.state.listaDeFilmes.concat({
-          filme: this.state.filme,
-          id: Date.now(),
-        }),
-        filme: '',
-      })
-    }
-  }
+//   Send = (event) => {
+//     // event.preventDefault() // Forma certa, mas menos semântica
+//     if (this.state.filme !== '') {
+//       this.setState({
+//         listaDeFilmes: this.state.listaDeFilmes.concat({
+//           filme: this.state.filme,
+//           id: Date.now(),
+//         }),
+//         filme: '',
+//       })
+//     }
+//   }
 
-  // Filter filtra as informações de uma array para outra de acordo com uma condição, sem alterar a primeira array
+//   // Filter filtra as informações de uma array para outra de acordo com uma condição, sem alterar a primeira array
 
-  Remove = (id) => {
-    this.setState({
-      listaDeFilmes: this.state.listaDeFilmes.filter(
-        (ident) => ident.id !== id,
-      ),
-    })
-  }
+//   Remove = (id) => {
+//     this.setState({
+//       listaDeFilmes: this.state.listaDeFilmes.filter(
+//         (ident) => ident.id !== id,
+//       ),
+//     })
+//   }
 
-  RemoveAll = (id) => {
-    this.setState({
-      listaDeFilmes: this.state.listaDeFilmes.filter(
-        (ident) => ident.listaDeFilmes,
-      ),
-    })
-  } // Inicio do botão que apaga tudo
+//   RemoveAll = (id) => {
+//     this.setState({
+//       listaDeFilmes: this.state.listaDeFilmes.filter(
+//         (ident) => ident.listaDeFilmes,
+//       ),
+//     })
+//   } // Inicio do botão que apaga tudo
 
-  render() {
-    return (
-      <form
-        onSubmit={(e) => {
-          e.preventDefault()
-        }} // Forma mais semântica
-      >
-        <input value={this.state.filme} onChange={this.handleChange} />
-        <button onClick={this.Send}>Send</button>
-        <button onClick={() => this.RemoveAll()}>X</button>
-        {this.state.listaDeFilmes.map((item) => (
-          <ol>
-            <li>{item.filme}</li>
-            <button
-              onClick={() => {
-                this.Remove(item.id)
-              }}
-            >
-              X
-            </button>
-          </ol>
-        ))}
-      </form>
-    )
-  }
-}
+//   render() {
+//     return (
+//       <form
+//         onSubmit={(e) => {
+//           e.preventDefault()
+//         }} // Forma mais semântica
+//       >
+//         <input value={this.state.filme} onChange={this.handleChange} />
+//         <button onClick={this.Send}>Send</button>
+//         <button onClick={() => this.RemoveAll()}>X</button>
+//         {this.state.listaDeFilmes.map((item) => (
+//           <ol>
+//             <li>{item.filme}</li>
+//             <button
+//               onClick={() => {
+//                 this.Remove(item.id)
+//               }}
+//             >
+//               X
+//             </button>
+//           </ol>
+//         ))}
+//       </form>
+//     )
+//   }
+// }
