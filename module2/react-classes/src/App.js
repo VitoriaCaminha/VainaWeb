@@ -876,17 +876,185 @@ export default class Grupo3 extends Component {
 //   }
 // }
 
-import React, { Component } from 'react'
-import Main from './components/Main/Main.js'
+// import React, { Component } from 'react'
+// import Main from './components/Main/Main.js'
 
-export default class App extends Component {
-  render() {
-    return (
-      <>
-        <Main grupo2="Debora, Dheniffe, Isaque, Hamom, Gabriel, Kelly, Jefferson, Aline, Vitória">
-          <h2>Olá</h2>
-        </Main>
-      </>
-    )
-  }
-}
+// export default class App extends Component {
+//   render() {
+//     return (
+//       <>
+//         <Main grupo2="Debora, Dheniffe, Isaque, Hamom, Gabriel, Kelly, Jefferson, Aline, Vitória">
+//           <h2>Olá</h2>
+//         </Main>
+//       </>
+//     )
+//   }
+// }
+
+// class 28: ciclo de vida
+
+// import React, { Component } from 'react'
+
+// export default class App extends Component {
+//   state = {
+//     number: 0,
+//   }
+
+//   // Primeiro o vanilla renderiza, depois o render() mostra na tela
+//   // depois o didMoun monta, depois o willUpdate mostra atualização e por ultimo o UmMonut desmonta
+
+//   componentDidMount() {
+//     //monta a tarefa a ser executada
+//     document.title = this.state.number
+//   }
+
+//   componentDidUpdate() {
+//     // mostra a execução da tarefa montada
+//     document.title = this.state.number
+//   }
+
+//   handleClick = () => {
+//     this.setState({
+//       number: this.state.number + 1,
+//     })
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <h1>{this.state.count}</h1>
+//         <button
+//           onClick={() => {
+//             this.handleClick()
+//           }}
+//         >
+//           contar 1
+//         </button>
+//       </div>
+//     )
+//   }
+// }
+
+// import React, { Component } from 'react'
+// // exemplo 2
+// class Main extends Component {
+//   state = {
+//     count: 0,
+//     nome: 'Julio',
+//   }
+
+//   componentDidMount() {
+//     document.title = this.state.nome
+//   }
+
+//   componentDidUpdate() {
+//     document.title = this.state.nome
+//   }
+
+//   handleClick = () => {
+//     this.setState({
+//       count: this.state.count + 1,
+//     })
+//   }
+
+//   Click = () => {
+//     this.setState({
+//       nome: 'Lucas', // nome: this.state.nome === "Lucas" ? 'Pedro' : 'Lucas'
+//     })
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <h1>{this.state.count}</h1>
+//         <button
+//           onClick={() => {
+//             this.handleClick()
+//           }}
+//         >
+//           contar 1
+//         </button>
+//         <button
+//           onClick={() => {
+//             this.Click()
+//           }}
+//         >
+//           mudar nome
+//         </button>
+//       </div>
+//     )
+//   }
+// }
+
+// export default Main
+
+// import React, { Component } from 'react'
+// // exemplo 3
+// class Main extends Component {
+//   state = {
+//     count: 0,
+//     nome: 'Julio',
+//   }
+
+//   componentDidMount() {
+//     document.title =
+//       this.state.count !== 0
+//         ? (document.title = this.state.nome)
+//         : (document.title = this.state.count)
+//   }
+
+//   componentDidUpdate() {
+//     document.title =
+//       this.state.count !== 0
+//         ? (document.title = this.state.nome)
+//         : (document.title = this.state.count)
+//   }
+
+//   handleClick = () => {
+//     this.setState({
+//       count: this.state.count + 1,
+//     })
+//   }
+//   handleRemove = () => {
+//     this.setState({
+//       count: this.state.count - 1,
+//     })
+//   }
+
+//   Click = () => {
+//     this.setState({
+//       nome: 'Lucas', // nome: this.state.nome === "Lucas" ? 'Pedro' : 'Lucas'
+//     })
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <h1>{this.state.count}</h1>
+//         <button
+//           onClick={() => {
+//             this.handleClick()
+//           }}
+//         >
+//           contar 1
+//         </button>
+//         <button
+//           onClick={() => {
+//             this.handleRemove()
+//           }}
+//         >
+//           contar -1
+//         </button>
+//         <button
+//           onClick={() => {
+//             this.Click()
+//           }}
+//         >
+//           mudar nome
+//         </button>
+//       </div>
+//     )
+//   }
+// }
+
+// export default Main
