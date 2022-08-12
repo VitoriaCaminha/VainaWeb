@@ -1058,3 +1058,26 @@ export default class Grupo3 extends Component {
 // }
 
 // export default Main
+
+// class 29: API
+
+// api: application programming interface // interface de programa de aplicativo
+
+// existem 3 tipos de API:
+// fechada (apenas internamente há acesso, usa uma key para poder ter acesso a API)
+// aberta (tem key, mas qualquer pessoa pode acessar)
+// pública (qualquer pessoa pode acessar)
+
+// API é um objeto
+
+import React, { Component } from 'react'
+
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <h1></h1>
+      </div>
+    )
+  }
+}
