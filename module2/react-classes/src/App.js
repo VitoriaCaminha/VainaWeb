@@ -1070,14 +1070,65 @@ export default class Grupo3 extends Component {
 
 // API é um objeto
 
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
 
-export default class App extends Component {
+// export default class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <h1></h1>
+//       </div>
+//     )
+//   }
+// }
+
+// class 30: API
+
+// O processo do ciclo de vida no React é inicar no DOM, ir ao Render, depois DidMount, DidUpdade e DidWillUnmount
+
+// import React, { Component } from 'react'
+
+// export default class App extends Component {
+//   state = {
+//     nome: 'David',
+//   }
+
+//   componentDidMount() {
+//     document.title = this.state.nome
+//   }
+
+//   componentDidUpdate(state) {
+//     if (state !== this.state.nome) {
+//       document.title = this.state.nome
+//     }
+//     // document.title = this.state.nome // Forma menos 'robusta' de fazer. Com a condição também há prevenção de vazamento de memória
+//   }
+
+//   mudar = () => {
+//     this.setState({
+//       nome: 'Leonardo',
+//     })
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <button>Mudar</button>
+//       </div>
+//     )
+//   }
+// }
+
+import React, { Component } from 'react'
+import Movies from './services/movies'
+
+class App extends Component {
   render() {
     return (
       <div>
-        <h1></h1>
+        <Movies />
       </div>
     )
   }
 }
+
+export default App
