@@ -1118,6 +1118,38 @@ export default class Grupo3 extends Component {
 //   }
 // }
 
+// import React, { Component } from 'react'
+// import Movies from './services/movies'
+
+// class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <Movies />
+//       </div>
+//     )
+//   }
+// }
+
+// export default App
+
+// class 31: Rotas
+
+// import React, { Component } from 'react'
+// import Header from './components/Header/Header'
+
+// class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <Header />
+//       </div>
+//     )
+//   }
+// }
+
+// export default App
+
 import React, { Component } from 'react'
 import Movies from './services/movies'
 
