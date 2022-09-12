@@ -1165,15 +1165,34 @@ export default class Grupo3 extends Component {
 
 // class 32: Rotas
 
-import React from "react";
-import Header from "./components/Header/Header.js";
+// import React from "react";
+// import Header from "./components/Header/Header.js";
 
-class App extends React.Component {
+// class App extends React.Component {
+//   render() {
+//     return (
+//       <>
+//         <Header />
+//       </>
+//     );
+//   }
+// }
+
+// export default App;
+
+// class 33: API
+
+import React, { Component } from 'react';
+import Header from './components/Header/Header'
+
+class App extends Component {
+
+
   render() {
     return (
-      <>
+      <div>
         <Header />
-      </>
+      </div>
     );
   }
 }

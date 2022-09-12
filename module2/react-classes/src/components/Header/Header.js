@@ -57,36 +57,72 @@
 
 // class 32: Rotas
 
-import React, { Component } from "react";
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
-import Contatos from "../Contatos/Contatos";
-import Home from "../Home/Home";
-import Sobre from "../Sobre/Sobre";
+// import React, { Component } from "react";
+// import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+// import Contatos from "../Contatos/Contatos";
+// import Home from "../Home/Home";
+// import Sobre from "../Sobre/Sobre";
 
-export default class Header extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <h1>Vamos Fazer umas Rotas</h1>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/"> Home </Link>
-            </li>
-            <li>
-              <Link to="/sobre">Sobre</Link>
-            </li>
-            <li>
-              <Link to="/contatos">Contatos</Link>
-            </li>
-          </ul>
-        </nav>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/contatos" element={<Contatos />} />
-        </Routes>
-      </BrowserRouter>
-    );
-  }
+// export default class Header extends Component {
+//   render() {
+//     return (
+//       <BrowserRouter>
+//         <h1>Vamos Fazer umas Rotas</h1>
+//         <nav>
+//           <ul>
+//             <li>
+//               <Link to="/"> Home </Link>
+//             </li>
+//             <li>
+//               <Link to="/sobre">Sobre</Link>
+//             </li>
+//             <li>
+//               <Link to="/contatos">Contatos</Link>
+//             </li>
+//           </ul>
+//         </nav>
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/sobre" element={<Sobre />} />
+//           <Route path="/contatos" element={<Contatos />} />
+//         </Routes>
+//       </BrowserRouter>
+//     );
+//   }
+// }
+
+// class 33: API
+
+import React, { Component } from 'react';
+import Home from '../../services/Home'
+import Movies from '../../services/movies';
+import {BrowserRouter ,Link, Route, Routes} from 'react-router-dom'
+
+class Header extends Component {
+    render() {
+        return (
+            <BrowserRouter>
+                <h1>BatataFlix</h1>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to='/'>Home</Link>
+                        </li>
+                        <li>
+                            <Link to='/movies'>Movies</Link>
+                        </li>
+                        <li>
+                            <Link to='/series'>Series</Link>
+                        </li>
+                    </ul>
+                </nav>
+                <Routes>
+                    <Route path='/' element={<Home />}/>
+                    <Route path='/movies' element={<Movies />}/>
+                </Routes>
+            </BrowserRouter>
+        );
+    }
 }
+
+export default Header;
