@@ -1201,14 +1201,79 @@ export default class Grupo3 extends Component {
 
 // class 34: axios
 
-import React, { Component } from "react";
-import Header from "./components/Header/Header";
+// import React, { Component } from "react";
+// import Header from "./components/Header/Header";
 
-export default class App extends Component {
+// export default class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <Header/>
+//       </div>
+//     );
+//   }
+// }
+
+// class 35: ciclo de vida
+
+import React from "react";
+import Gato from "./gato1.jpg";
+import Gato2 from "./gato2.jpg";
+
+export default class App extends React.Component {
+  state = {
+    nome: "Leno",
+    count: 0,
+    foto: Gato
+  };
+
+  componentDidMount() {
+    /*   setTimeout(() => {
+       alert(`Bem vindo ${this.state.nome}`)
+    }, 3000) */
+  }
+
+  componentDidUpdate() {
+    if (this.state.count % 2) {
+      document.body.style.backgroundColor = "green";
+    } else {
+      document.body.style.backgroundColor = "red";
+    }
+  }
+
+  handleAdd = () => {
+    const Tempo = setInterval(() => {
+      this.setState((prevState) => ({
+        count: prevState.count + 1,
+        foto: prevState.foto === Gato ? Gato2 : Gato
+      }));
+    }, 1000);
+    this.Stop = () => {
+      clearInterval(Tempo);
+    };
+  };
+
+  handleClick = () => {
+    setTimeout(() => {
+      this.setState((state) => ({
+        nome: state.nome === "Leno" ? "Nikolas" : "Leno"
+      }));
+    }, 1000);
+  };
+
+  //setInterval(O QUE FAZER, DE QUANTO EM QUANTO TEMPO)
+  //setTimeOut(OQUE FAZER, DEPOIS DE QUANTO TEMPO)
+
   render() {
     return (
       <div>
-        <Header/>
+        <h2>Bom dia Pessoal!!!</h2>
+        <p>{this.state.nome}</p>
+        <p>{this.state.count}</p>
+        <img style={{ width: "200px" }} src={this.state.foto} alt="" />
+        <button onClick={this.handleAdd}>Iniciar</button>
+        <button onClick={this.handleClick}>Mudar</button>
+        <button onClick={this.Stop}>Parar</button>
       </div>
     );
   }

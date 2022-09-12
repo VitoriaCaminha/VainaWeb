@@ -129,30 +129,30 @@
 
 // class 34: axios
 
-import React, { Component } from "react";
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
-import Home from "../../services/Home.js";
-import Series from "../../services/Series.js";
+// import React, { Component } from "react";
+// import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+// import Home from "../../services/Home.js";
+// import Series from "../../services/Series.js";
 
-export default class Header extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/"> Home</Link>
-            </li>
-            <li>
-              <Link to="/series">Series</Link>
-            </li>
-          </ul>
-        </nav>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/series" element={<Series />} />
-        </Routes>
-      </BrowserRouter>
-    );
-  }
-}
+// export default class Header extends Component {
+//   render() {
+//     return (
+//       <BrowserRouter>
+//         <nav>
+//           <ul>
+//             <li>
+//               <Link to="/"> Home</Link>
+//             </li>
+//             <li>
+//               <Link to="/series">Series</Link>
+//             </li>
+//           </ul>
+//         </nav>
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/series" element={<Series />} />
+//         </Routes>
+//       </BrowserRouter>
+//     );
+//   }
+// }
