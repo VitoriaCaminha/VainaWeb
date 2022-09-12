@@ -127,7 +127,7 @@
 
 // export default Header;
 
-// class 34: API
+// class 34: axios
 
 import React, { Component } from "react";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";

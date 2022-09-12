@@ -14,7 +14,7 @@
 
 // export default Home;
 
-// class 34: API
+// class 34: axios
 
 import React, { Component } from "react";
 

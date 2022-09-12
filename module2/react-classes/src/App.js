@@ -1199,7 +1199,7 @@ export default class Grupo3 extends Component {
 
 // export default App;
 
-// class 34: API
+// class 34: axios
 
 import React, { Component } from "react";
 import Header from "./components/Header/Header";
