@@ -1153,7 +1153,7 @@ export default class Grupo3 extends Component {
 import React, { Component } from 'react'
 import Movies from './services/movies'
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div>
@@ -1162,5 +1162,3 @@ class App extends Component {
     )
   }
 }
-
-export default App
