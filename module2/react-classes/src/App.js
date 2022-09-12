@@ -1182,19 +1182,34 @@ export default class Grupo3 extends Component {
 
 // class 33: API
 
-import React, { Component } from 'react';
-import Header from './components/Header/Header'
+// import React, { Component } from 'react';
+// import Header from './components/Header/Header'
 
-class App extends Component {
+// class App extends Component {
 
 
+//   render() {
+//     return (
+//       <div>
+//         <Header />
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
+
+// class 34: API
+
+import React, { Component } from "react";
+import Header from "./components/Header/Header";
+
+export default class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header/>
       </div>
     );
   }
 }
-
-export default App;

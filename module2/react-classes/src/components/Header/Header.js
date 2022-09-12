@@ -93,36 +93,66 @@
 
 // class 33: API
 
-import React, { Component } from 'react';
-import Home from '../../services/Home'
-import Movies from '../../services/movies';
-import {BrowserRouter ,Link, Route, Routes} from 'react-router-dom'
+// import React, { Component } from 'react';
+// import Home from '../../services/Home'
+// import Movies from '../../services/movies';
+// import {BrowserRouter ,Link, Route, Routes} from 'react-router-dom'
 
-class Header extends Component {
-    render() {
-        return (
-            <BrowserRouter>
-                <h1>BatataFlix</h1>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to='/'>Home</Link>
-                        </li>
-                        <li>
-                            <Link to='/movies'>Movies</Link>
-                        </li>
-                        <li>
-                            <Link to='/series'>Series</Link>
-                        </li>
-                    </ul>
-                </nav>
-                <Routes>
-                    <Route path='/' element={<Home />}/>
-                    <Route path='/movies' element={<Movies />}/>
-                </Routes>
-            </BrowserRouter>
-        );
-    }
+// class Header extends Component {
+//     render() {
+//         return (
+//             <BrowserRouter>
+//                 <h1>BatataFlix</h1>
+//                 <nav>
+//                     <ul>
+//                         <li>
+//                             <Link to='/'>Home</Link>
+//                         </li>
+//                         <li>
+//                             <Link to='/movies'>Movies</Link>
+//                         </li>
+//                         <li>
+//                             <Link to='/series'>Series</Link>
+//                         </li>
+//                     </ul>
+//                 </nav>
+//                 <Routes>
+//                     <Route path='/' element={<Home />}/>
+//                     <Route path='/movies' element={<Movies />}/>
+//                 </Routes>
+//             </BrowserRouter>
+//         );
+//     }
+// }
+
+// export default Header;
+
+// class 34: API
+
+import React, { Component } from "react";
+import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import Home from "../../services/Home.js";
+import Series from "../../services/Series.js";
+
+export default class Header extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/"> Home</Link>
+            </li>
+            <li>
+              <Link to="/series">Series</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/series" element={<Series />} />
+        </Routes>
+      </BrowserRouter>
+    );
+  }
 }
-
-export default Header;
