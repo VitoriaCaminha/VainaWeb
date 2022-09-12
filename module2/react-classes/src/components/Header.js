@@ -1,3 +1,5 @@
+// class 22: styled-components
+
 // import React, { Component } from 'react'
 // import styled from 'styled-components'
 
@@ -46,6 +48,8 @@
 //     )
 //   }
 // }
+
+// class 23: revisão
 
 // import React, { Component } from 'react'
 

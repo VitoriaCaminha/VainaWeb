@@ -1150,15 +1150,32 @@ export default class Grupo3 extends Component {
 
 // export default App
 
-import React, { Component } from 'react'
-import Movies from './services/movies'
+// import React, { Component } from 'react'
+// import Movies from './services/movies'
 
-export default class App extends Component {
+// export default class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <Movies />
+//       </div>
+//     )
+//   }
+// }
+
+// class 32: Rotas
+
+import React from "react";
+import Header from "./components/Header/Header.js";
+
+class App extends React.Component {
   render() {
     return (
-      <div>
-        <Movies />
-      </div>
-    )
+      <>
+        <Header />
+      </>
+    );
   }
 }
+
+export default App;

@@ -1,14 +1,16 @@
-import styled from 'styled-components'
+// class 27: props
 
-export const Container = styled.div`
-  background-color: red;
-  border: solid;
-`
+// import styled from 'styled-components'
 
-export const Subtitle = styled.h2`
-  font-size: 30px;
-`
+// export const Container = styled.div`
+//   background-color: red;
+//   border: solid;
+// `
 
-export const Photo = styled.img`
-  width: 10vw;
-`
+// export const Subtitle = styled.h2`
+//   font-size: 30px;
+// `
+
+// export const Photo = styled.img`
+//   width: 10vw;
+// `

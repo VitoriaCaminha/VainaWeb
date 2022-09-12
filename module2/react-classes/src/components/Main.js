@@ -1,3 +1,5 @@
+// class 21: styled-components
+
 // import React, { Component } from 'react'
 // import styled from 'styled-components'
 
@@ -58,6 +60,8 @@
 //   }
 // }
 
+// class 22: styled-components
+
 // import React from 'react'
 
 // export default class Main extends React.Component {
@@ -99,6 +103,8 @@
 //     )
 //   }
 // }
+
+// class 23: revisão
 
 // import React, { Component } from 'react'
 
@@ -173,6 +179,8 @@
 //   }
 // }
 
+// class 24: To do
+
 // export default class Main extends React.Component {
 //   state = {
 //     compras: '',
@@ -211,6 +219,8 @@
 //     )
 //   }
 // }
+
+// class 25: ToDo
 
 // import React, { Component } from 'react'
 
@@ -277,6 +287,8 @@
 
 // Fazer não adicionar task vazia e fazer adicionar com enter
 // usar if/else e usar método que vem junto com event para enviar com enter
+
+// class 26: ToDo
 
 // import React, { Component } from 'react'
 
