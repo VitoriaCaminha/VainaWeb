@@ -1395,57 +1395,72 @@ export default class Grupo3 extends Component {
 
 // class 38: ToDo com useState
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
+
+// function App() {
+//   const [tarefas, setTarefas] = useState("");
+//   const [listadeTarefas, setLista] = useState([]);
+
+//   console.log(listadeTarefas);
+
+//   const nome = { tarefas: tarefas, id: Date.now() };
+
+//   const handleClick = () => {
+//     if (tarefas === "") {
+//     } else {
+//       setLista([...listadeTarefas, nome]);
+//     }
+//     setTarefas("");
+//   };
+
+//   const Remove = (id) => {
+//     setLista(listadeTarefas.filter((item) => item.id !== id));
+//   };
+
+//   return (
+//     <div>
+//       <form
+//         onSubmit={(e) => {
+//           e.preventDefault();
+//         }}>
+//         <input
+//           value={tarefas}
+//           onChange={(e) => {
+//             setTarefas(e.target.value);
+//           }}
+//         />
+//         <button onClick={() => handleClick()}>ADD</button>
+//       </form>
+//       {listadeTarefas.map((item, index) => (
+//         <div key={index}>
+//           <ul>
+//             <li>{item.tarefas}</li>
+//           </ul>
+//           <button
+//             onClick={() => {
+//               Remove(item.id);
+//             }}>
+//             Remove
+//           </button>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// class 39: ToDo
+
+import React from 'react'
+import Main from './components/Main/Main'
 
 function App() {
-  const [tarefas, setTarefas] = useState("");
-  const [listadeTarefas, setLista] = useState([]);
-
-  console.log(listadeTarefas);
-
-  const nome = { tarefas: tarefas, id: Date.now() };
-
-  const handleClick = () => {
-    if (tarefas === "") {
-    } else {
-      setLista([...listadeTarefas, nome]);
-    }
-    setTarefas("");
-  };
-
-  const Remove = (id) => {
-    setLista(listadeTarefas.filter((item) => item.id !== id));
-  };
-
   return (
     <div>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}>
-        <input
-          value={tarefas}
-          onChange={(e) => {
-            setTarefas(e.target.value);
-          }}
-        />
-        <button onClick={() => handleClick()}>ADD</button>
-      </form>
-      {listadeTarefas.map((item, index) => (
-        <div key={index}>
-          <ul>
-            <li>{item.tarefas}</li>
-          </ul>
-          <button
-            onClick={() => {
-              Remove(item.id);
-            }}>
-            Remove
-          </button>
-        </div>
-      ))}
+      <Main />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
