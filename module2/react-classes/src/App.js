@@ -1281,63 +1281,113 @@ export default class Grupo3 extends Component {
 
 // class 36: useState
 
+// import React, { useState } from "react";
+
+// const App = () => {
+//   const [cadastro, setCadastro] = useState([
+//     { nome: "Jordan", idade: 23 },
+//     { nome: "Jorge", idade: 19 },
+//     { nome: "Alberto", idade: 15 }
+//   ]);
+//   const [open, setOpen] = useState(false);
+//   const [name, setName] = useState("Hamom");
+//   const [count, setCount] = useState(0);
+
+//   /*  const handleClick = () => {
+//     setName(name === 'Hamom' ? 'Débora' : 'Hamom')
+//   } */
+
+//   /*   const MudarNome = () => {
+//     setInterval(() => {
+//       setName(name === "Hamom" ? "Débora" : "Hamom");
+//     }, 2000);
+//   }; */
+
+//   return (
+//     <div>
+//       <h2>{open && name}</h2>
+//       <h3>{count}</h3>
+//       <button
+//         onClick={() => {
+//           setName(name === "Hamom" ? "Débora" : "Hamom");
+//         }}>
+//         Mudar Nome
+//       </button>
+//       <button
+//         onClick={() => {
+//           setCount(count < 10 ? count + 1 : count);
+//         }}>
+//         Contar 1
+//       </button>
+//       <button
+//         onClick={() => {
+//           setCount(count - 1);
+//         }}>
+//         Tirar 1
+//       </button>
+//       {cadastro.map((item) => (
+//         <ul>
+//           <li>{item.nome}</li>
+//           <li>{item.idade}</li>
+//         </ul>
+//       ))}
+//       <button
+//         onClick={() => {
+//           setOpen(!open);
+//         }}>
+//         Aparecer
+//       </button>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// class 37: modal
+
 import React, { useState } from "react";
+import * as S from "./styled.js";
+import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import Contador from "./components/contador.js";
+import Calculadora from "./components/calculadora.js";
 
 const App = () => {
-  const [cadastro, setCadastro] = useState([
-    { nome: "Jordan", idade: 23 },
-    { nome: "Jorge", idade: 19 },
-    { nome: "Alberto", idade: 15 }
-  ]);
   const [open, setOpen] = useState(false);
-  const [name, setName] = useState("Hamom");
-  const [count, setCount] = useState(0);
 
-  /*  const handleClick = () => {
-    setName(name === 'Hamom' ? 'Débora' : 'Hamom')
-  } */
-
-  /*   const MudarNome = () => {
-    setInterval(() => {
-      setName(name === "Hamom" ? "Débora" : "Hamom");
-    }, 2000);
-  }; */
+  const Modal = () => {
+    return (
+      <S.Nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/Calc">Calculadora</Link>
+          </li>
+          <li>
+            <Link to="/Cont">Contador</Link>
+          </li>
+        </ul>
+      </S.Nav>
+    );
+  };
 
   return (
-    <div>
-      <h2>{open && name}</h2>
-      <h3>{count}</h3>
-      <button
-        onClick={() => {
-          setName(name === "Hamom" ? "Débora" : "Hamom");
-        }}>
-        Mudar Nome
-      </button>
-      <button
-        onClick={() => {
-          setCount(count < 10 ? count + 1 : count);
-        }}>
-        Contar 1
-      </button>
-      <button
-        onClick={() => {
-          setCount(count - 1);
-        }}>
-        Tirar 1
-      </button>
-      {cadastro.map((item) => (
-        <ul>
-          <li>{item.nome}</li>
-          <li>{item.idade}</li>
-        </ul>
-      ))}
-      <button
+    <BrowserRouter>
+      <S.GlobalStyles />
+      <S.Btn
         onClick={() => {
           setOpen(!open);
         }}>
-        Aparecer
-      </button>
-    </div>
+        {open === true ? "X" : "≡"}
+      </S.Btn>
+      {open && Modal()}
+      <Routes>
+        <Route path="/" />
+        <Route path="/Calc" element={<Calculadora />} />
+        <Route path="/Cont" element={<Contador />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
