@@ -1536,44 +1536,60 @@ export default function App() {
   );
 } */
 
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 
-export default function App() {
-  const [open, setOpen] = useState(true);
+// export default function App() {
+//   const [open, setOpen] = useState(true);
 
+//   return (
+//     <div>
+//       <button
+//         onClick={() => {
+//           setOpen(!open);
+//         }}>
+//         Desmontar
+//       </button>
+//       {!open && (
+//         <img
+//           style={{ width: "200px" }}
+//           src="https://i.pinimg.com/564x/87/66/8a/87668a72c6c9df55ebd98a162cec77d1.jpg"
+//           alt="foto"
+//         />
+//       )}
+//       {open && <OutroComponent />}
+//     </div>
+//   );
+// }
+
+// const OutroComponent = ({ msg }) => {
+//   useEffect(() => {
+//     document.title = "Component Montado";
+//     document.body.style.backgroundColor = "red";
+
+//     return () => {
+//       document.title = "Component Desmontado";
+//       document.body.style.backgroundColor = "blue";
+//     };
+//   }, []);
+//   return (
+//     <>
+//       <h2>Esse aqui é o Componento 2</h2>
+//     </>
+//   );
+// };
+
+// class 41: createGlobalStyle
+
+import React from "react";
+import Router from "./components/routes/Route";
+import * as S from "./components/Style/Styles";
+const App = () => {
   return (
     <div>
-      <button
-        onClick={() => {
-          setOpen(!open);
-        }}>
-        Desmontar
-      </button>
-      {!open && (
-        <img
-          style={{ width: "200px" }}
-          src="https://i.pinimg.com/564x/87/66/8a/87668a72c6c9df55ebd98a162cec77d1.jpg"
-          alt="foto"
-        />
-      )}
-      {open && <OutroComponent />}
+      <S.GlobalStyle />
+      <Router />
     </div>
   );
-}
-
-const OutroComponent = ({ msg }) => {
-  useEffect(() => {
-    document.title = "Component Montado";
-    document.body.style.backgroundColor = "red";
-
-    return () => {
-      document.title = "Component Desmontado";
-      document.body.style.backgroundColor = "blue";
-    };
-  }, []);
-  return (
-    <>
-      <h2>Esse aqui é o Componento 2</h2>
-    </>
-  );
 };
+
+export default App;
