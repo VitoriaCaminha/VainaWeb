@@ -1345,50 +1345,107 @@ export default class Grupo3 extends Component {
 
 // class 37: modal
 
+// import React, { useState } from "react";
+// import * as S from "./styled.js";
+// import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+// import Contador from "./components/contador.js";
+// import Calculadora from "./components/calculadora.js";
+
+// const App = () => {
+//   const [open, setOpen] = useState(false);
+
+//   const Modal = () => {
+//     return (
+//       <S.Nav>
+//         <ul>
+//           <li>
+//             <Link to="/">Home</Link>
+//           </li>
+//           <li>
+//             <Link to="/Calc">Calculadora</Link>
+//           </li>
+//           <li>
+//             <Link to="/Cont">Contador</Link>
+//           </li>
+//         </ul>
+//       </S.Nav>
+//     );
+//   };
+
+//   return (
+//     <BrowserRouter>
+//       <S.GlobalStyles />
+//       <S.Btn
+//         onClick={() => {
+//           setOpen(!open);
+//         }}>
+//         {open === true ? "X" : "≡"}
+//       </S.Btn>
+//       {open && Modal()}
+//       <Routes>
+//         <Route path="/" />
+//         <Route path="/Calc" element={<Calculadora />} />
+//         <Route path="/Cont" element={<Contador />} />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// };
+
+// export default App;
+
+// class 38: ToDo com useState
+
 import React, { useState } from "react";
-import * as S from "./styled.js";
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
-import Contador from "./components/contador.js";
-import Calculadora from "./components/calculadora.js";
 
-const App = () => {
-  const [open, setOpen] = useState(false);
+function App() {
+  const [tarefas, setTarefas] = useState("");
+  const [listadeTarefas, setLista] = useState([]);
 
-  const Modal = () => {
-    return (
-      <S.Nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/Calc">Calculadora</Link>
-          </li>
-          <li>
-            <Link to="/Cont">Contador</Link>
-          </li>
-        </ul>
-      </S.Nav>
-    );
+  console.log(listadeTarefas);
+
+  const nome = { tarefas: tarefas, id: Date.now() };
+
+  const handleClick = () => {
+    if (tarefas === "") {
+    } else {
+      setLista([...listadeTarefas, nome]);
+    }
+    setTarefas("");
+  };
+
+  const Remove = (id) => {
+    setLista(listadeTarefas.filter((item) => item.id !== id));
   };
 
   return (
-    <BrowserRouter>
-      <S.GlobalStyles />
-      <S.Btn
-        onClick={() => {
-          setOpen(!open);
+    <div>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
         }}>
-        {open === true ? "X" : "≡"}
-      </S.Btn>
-      {open && Modal()}
-      <Routes>
-        <Route path="/" />
-        <Route path="/Calc" element={<Calculadora />} />
-        <Route path="/Cont" element={<Contador />} />
-      </Routes>
-    </BrowserRouter>
+        <input
+          value={tarefas}
+          onChange={(e) => {
+            setTarefas(e.target.value);
+          }}
+        />
+        <button onClick={() => handleClick()}>ADD</button>
+      </form>
+      {listadeTarefas.map((item, index) => (
+        <div key={index}>
+          <ul>
+            <li>{item.tarefas}</li>
+          </ul>
+          <button
+            onClick={() => {
+              Remove(item.id);
+            }}>
+            Remove
+          </button>
+        </div>
+      ))}
+    </div>
   );
-};
+}
 
 export default App;
