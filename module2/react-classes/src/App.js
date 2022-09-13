@@ -1216,65 +1216,129 @@ export default class Grupo3 extends Component {
 
 // class 35: ciclo de vida
 
-import React from "react";
-import Gato from "./gato1.jpg";
-import Gato2 from "./gato2.jpg";
+// import React from "react";
+// import Gato from "./gato1.jpg";
+// import Gato2 from "./gato2.jpg";
 
-export default class App extends React.Component {
-  state = {
-    nome: "Leno",
-    count: 0,
-    foto: Gato
-  };
+// export default class App extends React.Component {
+//   state = {
+//     nome: "Leno",
+//     count: 0,
+//     foto: Gato
+//   };
 
-  componentDidMount() {
-    /*   setTimeout(() => {
-       alert(`Bem vindo ${this.state.nome}`)
-    }, 3000) */
-  }
+//   componentDidMount() {
+//     /*   setTimeout(() => {
+//        alert(`Bem vindo ${this.state.nome}`)
+//     }, 3000) */
+//   }
 
-  componentDidUpdate() {
-    if (this.state.count % 2) {
-      document.body.style.backgroundColor = "green";
-    } else {
-      document.body.style.backgroundColor = "red";
-    }
-  }
+//   componentDidUpdate() {
+//     if (this.state.count % 2) {
+//       document.body.style.backgroundColor = "green";
+//     } else {
+//       document.body.style.backgroundColor = "red";
+//     }
+//   }
 
-  handleAdd = () => {
-    const Tempo = setInterval(() => {
-      this.setState((prevState) => ({
-        count: prevState.count + 1,
-        foto: prevState.foto === Gato ? Gato2 : Gato
-      }));
-    }, 1000);
-    this.Stop = () => {
-      clearInterval(Tempo);
-    };
-  };
+//   handleAdd = () => {
+//     const Tempo = setInterval(() => {
+//       this.setState((prevState) => ({
+//         count: prevState.count + 1,
+//         foto: prevState.foto === Gato ? Gato2 : Gato
+//       }));
+//     }, 1000);
+//     this.Stop = () => {
+//       clearInterval(Tempo);
+//     };
+//   };
 
-  handleClick = () => {
-    setTimeout(() => {
-      this.setState((state) => ({
-        nome: state.nome === "Leno" ? "Nikolas" : "Leno"
-      }));
-    }, 1000);
-  };
+//   handleClick = () => {
+//     setTimeout(() => {
+//       this.setState((state) => ({
+//         nome: state.nome === "Leno" ? "Nikolas" : "Leno"
+//       }));
+//     }, 1000);
+//   };
 
-  //setInterval(O QUE FAZER, DE QUANTO EM QUANTO TEMPO)
-  //setTimeOut(OQUE FAZER, DEPOIS DE QUANTO TEMPO)
+//   //setInterval(O QUE FAZER, DE QUANTO EM QUANTO TEMPO)
+//   //setTimeOut(OQUE FAZER, DEPOIS DE QUANTO TEMPO)
 
-  render() {
-    return (
-      <div>
-        <h2>Bom dia Pessoal!!!</h2>
-        <p>{this.state.nome}</p>
-        <p>{this.state.count}</p>
-        <img style={{ width: "200px" }} src={this.state.foto} alt="" />
-        <button onClick={this.handleAdd}>Iniciar</button>
-        <button onClick={this.handleClick}>Mudar</button>
-        <button onClick={this.Stop}>Parar</button>
-      </div>
-    );
-  }
-}
+//   render() {
+//     return (
+//       <div>
+//         <h2>Bom dia Pessoal!!!</h2>
+//         <p>{this.state.nome}</p>
+//         <p>{this.state.count}</p>
+//         <img style={{ width: "200px" }} src={this.state.foto} alt="" />
+//         <button onClick={this.handleAdd}>Iniciar</button>
+//         <button onClick={this.handleClick}>Mudar</button>
+//         <button onClick={this.Stop}>Parar</button>
+//       </div>
+//     );
+//   }
+// }
+
+// class 36: useState
+
+import React, { useState } from "react";
+
+const App = () => {
+  const [cadastro, setCadastro] = useState([
+    { nome: "Jordan", idade: 23 },
+    { nome: "Jorge", idade: 19 },
+    { nome: "Alberto", idade: 15 }
+  ]);
+  const [open, setOpen] = useState(false);
+  const [name, setName] = useState("Hamom");
+  const [count, setCount] = useState(0);
+
+  /*  const handleClick = () => {
+    setName(name === 'Hamom' ? 'Débora' : 'Hamom')
+  } */
+
+  /*   const MudarNome = () => {
+    setInterval(() => {
+      setName(name === "Hamom" ? "Débora" : "Hamom");
+    }, 2000);
+  }; */
+
+  return (
+    <div>
+      <h2>{open && name}</h2>
+      <h3>{count}</h3>
+      <button
+        onClick={() => {
+          setName(name === "Hamom" ? "Débora" : "Hamom");
+        }}>
+        Mudar Nome
+      </button>
+      <button
+        onClick={() => {
+          setCount(count < 10 ? count + 1 : count);
+        }}>
+        Contar 1
+      </button>
+      <button
+        onClick={() => {
+          setCount(count - 1);
+        }}>
+        Tirar 1
+      </button>
+      {cadastro.map((item) => (
+        <ul>
+          <li>{item.nome}</li>
+          <li>{item.idade}</li>
+        </ul>
+      ))}
+      <button
+        onClick={() => {
+          setOpen(!open);
+        }}>
+        Aparecer
+      </button>
+    </div>
+  );
+};
+
+export default App;
