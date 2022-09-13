@@ -26,42 +26,42 @@
 
 // class 39: ToDo
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
-function Main() {
-  const [tarefas, setTarefas] = useState("");
-  const [lista, setLista] = useState([]);
-  const tarefa = { tarefa: tarefas, id: Date.now() };
+// function Main() {
+//   const [tarefas, setTarefas] = useState("");
+//   const [lista, setLista] = useState([]);
+//   const tarefa = { tarefa: tarefas, id: Date.now() };
 
-  const Add = () => {
-    setLista([...lista, tarefa]);
-  };
+//   const Add = () => {
+//     setLista([...lista, tarefa]);
+//   };
 
-  return (
-    <div>
-      <input
-        onChange={(e) => {
-          setTarefas(e.target.value);
-        }}
-      />
-      <button
-        onClick={() => {
-          Add();
-        }}
-      >
-        Enviar
-      </button>
-      {lista.map((item, index) => (
-        <div key={index}>
-          <input type="checkbox" />
-          <label>{item.tarefa}</label>
-          <button onClick={(id) =>
-             {setLista(lista.filter((item) => item.id === id))}}>
-            X
-          </button>
-        </div>
-      ))}
-    </div>
-  );
-}
-export default Main;
+//   return (
+//     <div>
+//       <input
+//         onChange={(e) => {
+//           setTarefas(e.target.value);
+//         }}
+//       />
+//       <button
+//         onClick={() => {
+//           Add();
+//         }}
+//       >
+//         Enviar
+//       </button>
+//       {lista.map((item, index) => (
+//         <div key={index}>
+//           <input type="checkbox" />
+//           <label>{item.tarefa}</label>
+//           <button onClick={(id) =>
+//              {setLista(lista.filter((item) => item.id === id))}}>
+//             X
+//           </button>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
+// export default Main;

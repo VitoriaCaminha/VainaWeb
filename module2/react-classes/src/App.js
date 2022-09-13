@@ -1452,15 +1452,128 @@ export default class Grupo3 extends Component {
 
 // class 39: ToDo
 
-import React from 'react'
-import Main from './components/Main/Main'
+// import React from 'react'
+// import Main from './components/Main/Main'
 
-function App() {
-  return (
-    <div>
-      <Main />
-    </div>
-  )
+// function App() {
+//   return (
+//     <div>
+//       <Main />
+//     </div>
+//   )
+// }
+
+// export default App
+
+// class 40: useEffect
+
+/* import React, {Component} from 'react'
+
+
+export default class App extends Component{
+  state={
+    status:true
+  }
+
+componentDidMount(){
+  setTimeout(() => {
+    this.setState({status:false})
+  }, 5000)
 }
 
-export default App
+  render() {
+    return(
+      <div>
+        {this.state.status && <OutroComponent />}
+      </div>
+    )
+  }
+}
+
+
+class OutroComponent extends React.Component{
+componentWillUnmount(){
+  document.body.style.backgroundColor = 'green'
+  document.title = 'O Component foi desmontado'
+}
+
+  render(){
+    return(
+      <>
+        <h1>Boa segunda feira a todes!!!</h1>
+      </>
+    )
+  }
+} */
+
+/* import React, { useState, useEffect } from "react";
+
+export default function App() {
+  const [user, setUser] = useState("Jordan");
+
+  const [msg, setMsg] = useState("oi");
+
+  useEffect(() => {
+    alert("oi, eu renderizei");
+  }, []);
+
+  return (
+    <div>
+      <h2>{user}</h2>
+      <button
+        onClick={() => {
+          setUser(user === "Jordan" ? " Leno" : "Jordan");
+        }}>
+        Mudar nome
+      </button>
+      <h1
+        onClick={() => {
+          setMsg("Bye Bye");
+        }}>
+        {msg}
+      </h1>
+    </div>
+  );
+} */
+
+import React, { useState, useEffect } from "react";
+
+export default function App() {
+  const [open, setOpen] = useState(true);
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setOpen(!open);
+        }}>
+        Desmontar
+      </button>
+      {!open && (
+        <img
+          style={{ width: "200px" }}
+          src="https://i.pinimg.com/564x/87/66/8a/87668a72c6c9df55ebd98a162cec77d1.jpg"
+          alt="foto"
+        />
+      )}
+      {open && <OutroComponent />}
+    </div>
+  );
+}
+
+const OutroComponent = ({ msg }) => {
+  useEffect(() => {
+    document.title = "Component Montado";
+    document.body.style.backgroundColor = "red";
+
+    return () => {
+      document.title = "Component Desmontado";
+      document.body.style.backgroundColor = "blue";
+    };
+  }, []);
+  return (
+    <>
+      <h2>Esse aqui é o Componento 2</h2>
+    </>
+  );
+};
