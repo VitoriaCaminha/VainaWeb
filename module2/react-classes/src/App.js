@@ -1596,17 +1596,46 @@ export default function App() {
 
 // class 42: createGlobalStyle
 
-import React from "react";
-import Api from "./components/Api";
-import * as S from "./components/Style/Styles.js";
-import Photo from "./rick-and-morty.png";
+// import React from "react";
+// import Api from "./components/Api";
+// import * as S from "./components/Style/Styles.js";
+// import Photo from "./rick-and-morty.png";
 
-export default function App() {
+// export default function App() {
+//   return (
+//     <S.Div>
+//       <S.GlobalStyle />
+//       <S.Photo src={Photo} />
+//       <Api />
+//     </S.Div>
+//   );
+// };
+
+// class 43: useEffect
+
+// import React from 'react'
+
+// import Batata from './components/Random.js'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <Batata />
+//     </div>
+//   )
+// }
+
+// export default App;
+
+import React from 'react'
+import Header from './components/Header/Header'
+
+const App = () => {
   return (
-    <S.Div>
-      <S.GlobalStyle />
-      <S.Photo src={Photo} />
-      <Api />
-    </S.Div>
-  );
-};
+    <div>
+      <Header />
+    </div>
+  )
+}
+
+export default App
