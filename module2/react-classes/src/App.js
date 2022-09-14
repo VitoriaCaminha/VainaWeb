@@ -1580,16 +1580,33 @@ export default function App() {
 
 // class 41: createGlobalStyle
 
+// import React from "react";
+// import Router from "./components/routes/Route";
+// import * as S from "./components/Style/Styles";
+// const App = () => {
+//   return (
+//     <div>
+//       <S.GlobalStyle />
+//       <Router />
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// class 42: createGlobalStyle
+
 import React from "react";
-import Router from "./components/routes/Route";
-import * as S from "./components/Style/Styles";
-const App = () => {
+import Api from "./components/Api";
+import * as S from "./components/Style/Styles.js";
+import Photo from "./rick-and-morty.png";
+
+export default function App() {
   return (
-    <div>
+    <S.Div>
       <S.GlobalStyle />
-      <Router />
-    </div>
+      <S.Photo src={Photo} />
+      <Api />
+    </S.Div>
   );
 };
-
-export default App;
