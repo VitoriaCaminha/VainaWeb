@@ -1627,15 +1627,156 @@ export default function App() {
 
 // export default App;
 
-import React from 'react'
-import Header from './components/Header/Header'
+// import React from 'react'
+// import Header from './components/Header/Header'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <Header />
+//     </div>
+//   )
+// }
+
+// export default App
+
+// class 44: useRef
+
+// useRef retorna um objeto ref mutável, no qual a propriedade .current é inicializada para o argumento
+// passado (initialValue). O objeto retornado persistirá durante todo o ciclo de vida do componente.
+
+// cria um objeto com uma propriedade chamada current.
+// O useRef referencia esse objeto a qualquer lugar da página
+
+// Não renderiza de novo a página quando é atualizado,
+// enquanto o useState (ou state) renderiza novamente a página
+
+// import React, { useState } from 'react';
+
+// const App = () => {
+//   const [input, setInput] = useState()
+
+//   return (
+//     <div>
+//       <input onChange={(e) => setInput(e.target.value)} />
+//     </div>
+//   )
+// }
+
+// export default App;
+
+// import React, { useRef } from 'react';
+
+// const App = () => {
+//   const refInput = useRef() // referencia
+
+//   function vejaInput(e) {
+//     e.preventDefault();
+//     console.log(refInput.current.value)
+//   }
+
+//   return (
+//     <form onSubmit={vejaInput}>
+//       <input ref={refInput} type='text' /> {/* referencia sendo usada */}
+//       <input type='submit' />
+//     </form>
+//   )
+// }
+
+// export default App;
+
+// import React, { useRef, useState } from 'react';
+
+// const App = () => {
+//   const [input, setInput] = useState()
+//   const [mensagem, setMensagem] = useState()
+
+//   const ManipularInput = useRef()
+//   const ManipularBtn = useRef()
+
+//   const handleClick = () => {
+//     setMensagem(input)
+//     setInput("")
+//   }
+
+//   function MexerNoInput() {
+//     ManipularInput.current.focus()
+//     ManipularInput.current.style.backgroundColor = 'green'
+//     ManipularInput.current.style.border = 'dotted'
+//     ManipularInput.current.value = 'Oi galera'
+//     ManipularBtn.current.style.backgroundColor = 'red'
+//     ManipularBtn.current.style.width = '10vw'
+//   }
+
+//   return (
+//     <form onSubmit={(e) => e.preventDefault()}>
+//       <input ref={ManipularInput} value={input} onChange={(e) => { setInput(e.target.value) }} />
+//       <button ref={ManipularBtn} onClick={() => (handleClick())}>enviar</button>
+//       <h1>{mensagem}</h1>
+//       <button onClick={() => { MexerNoInput() }}>Mexer no Input</button>
+//     </form>
+//   )
+// }
+
+// export default App;
+
+// import React, { useState, useEffect, useRef } from 'react';
+
+// const App = () => {
+//   const [number, setNumber] = useState(0)
+//   const referenciaNumero = useRef()
+
+// function Contar() {
+//   setNumber((prevState) => prevState + 1)
+// }
+
+//   useEffect(() => {
+//     if (number === 5 || number === 11) {
+//       referenciaNumero.current.innerText = 'agora sou um texto'
+//       referenciaNumero.current.style.backgroundColor = 'indigo'
+//       document.style.backgroundColor = 'green'
+//     } else {
+//      referenciaNumero.current
+//      document.body.backgroundColor = 'white'
+//     }
+//   }, [number])
+
+//   return (
+//     <div>
+//       <h1 ref={referenciaNumero}>{number}</h1>
+//       <button onClick={() => {Contar()}}>add</button>
+//     </div>
+//   )
+// }
+
+// export default App;
+
+import React, { useState, useEffect, useRef } from 'react';
+import { createGlobalStyle } from 'styled-components'
+import Pinha from './pinha.jpg'
+
+const GlobalStyle = createGlobalStyle`
+body{
+  background-image: url(${Pinha})
+}
+`
 
 const App = () => {
+  const [valor, setValor] = useState("")
+  const count = useRef(0)
+
+  useEffect(() => {
+    count.current = count.current + 1
+  }, [valor])
+
   return (
     <div>
-      <Header />
+      <GlobalStyle />
+      <h2>O que você está pensando?</h2>
+      <textarea placeholder='deixe seu comentário' onChange={(e) => { setValor(e.target.value) }} />
+      <h4>Caracteres usados: {count.current}</h4>
     </div>
   )
 }
 
-export default App
+export default App;

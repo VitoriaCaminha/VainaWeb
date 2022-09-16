@@ -186,38 +186,38 @@
 
 // class 43: useEffect
 
-import React, { useState, useEffect } from 'react'
+// import React, { useState, useEffect } from 'react'
 
-import axios from 'axios'
+// import axios from 'axios'
 
-const Header = () => {
-    const [card, setCard] = useState([])
+// const Header = () => {
+//     const [card, setCard] = useState([])
 
-    useEffect(() => {
-        axios.get('http://hp-api.herokuapp.com/api/characters')
-            .then(res => {
-                setCard(res.data)
-            })
-            .catch(err => {
-                console.log('Erro', err)
-            })
-    }, [])
+//     useEffect(() => {
+//         axios.get('http://hp-api.herokuapp.com/api/characters')
+//             .then(res => {
+//                 setCard(res.data)
+//             })
+//             .catch(err => {
+//                 console.log('Erro', err)
+//             })
+//     }, [])
 
-    return (
-        <div>
-            <h1>Oi</h1>
-            {card.map((item) => (
-                <div>
-                    <ul>
-                        <li>{item.name}</li>
-                    </ul>
-                    <figure>
-                        <img src={item.image} />
-                    </figure>
-                </div>
-            ))}
-        </div>
-    )
-}
+//     return (
+//         <div>
+//             <h1>Oi</h1>
+//             {card.map((item) => (
+//                 <div>
+//                     <ul>
+//                         <li>{item.name}</li>
+//                     </ul>
+//                     <figure>
+//                         <img src={item.image} />
+//                     </figure>
+//                 </div>
+//             ))}
+//         </div>
+//     )
+// }
 
-export default Header;
+// export default Header;
