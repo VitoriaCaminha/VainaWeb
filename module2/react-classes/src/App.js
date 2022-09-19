@@ -1751,32 +1751,94 @@ export default function App() {
 
 // export default App;
 
-import React, { useState, useEffect, useRef } from 'react';
-import { createGlobalStyle } from 'styled-components'
-import Pinha from './pinha.jpg'
+// import React, { useState, useEffect, useRef } from 'react';
+// import { createGlobalStyle } from 'styled-components'
+// import Pinha from './pinha.jpg'
 
-const GlobalStyle = createGlobalStyle`
-body{
-  background-image: url(${Pinha})
-}
-`
+// const GlobalStyle = createGlobalStyle`
+// body{
+//   background-image: url(${Pinha})
+// }
+// `
 
-const App = () => {
-  const [valor, setValor] = useState("")
-  const count = useRef(0)
+// const App = () => {
+//   const [valor, setValor] = useState("")
+//   const count = useRef(0)
+
+//   useEffect(() => {
+//     count.current = count.current + 1
+//   }, [valor])
+
+//   return (
+//     <div>
+//       <GlobalStyle />
+//       <h2>O que você está pensando?</h2>
+//       <textarea placeholder='deixe seu comentário' onChange={(e) => { setValor(e.target.value) }} />
+//       <h4>Caracteres usados: {count.current}</h4>
+//     </div>
+//   )
+// }
+
+// export default App;
+
+// class 45: useRef
+
+import React, { useState, useEffect, useRef } from 'react'
+
+export default function App() {
+  const [timer, setTimer] = useState("00:00:00")
+
+  const Clean = useRef(null)
+
+  const getTimer = (e) => {
+    const total = Date.parse(e) - Date.parse(new Date())
+    const segundos = Math.floor((total / 1000) % 60)
+    const minutos = Math.floor((total / 1000 / 60) % 60)
+    const horas = Math.floor((total / 1000 * 60 * 60) % 24)
+    return {
+      total, segundos, minutos, horas
+    }
+  }
+
+  const iniciaTimer = (e) => {
+    const { total, horas, minutos, segundos } = getTimer(e)
+    if (total >= 0) {
+      setTimer(
+        (horas > 9 ? horas : `0${horas}`).concat(':') +
+        (minutos > 9 ? minutos : `0${minutos}`).concat(':') +
+        (segundos > 9 ? segundos : `0${segundos}`)
+      )
+    }
+  }
+
+  const limparTimer = (e) => {
+    setTimer("00:01:00")
+    if (Clean.current) clearInterval(Clean.current)
+    const id = setInterval(() => {
+      iniciaTimer(e)
+    }, 1000)
+    Clean.current = id
+  }
+
+  const getLimite = () => {
+    const Limite = new Date()
+
+    Limite.setSeconds(Limite.getSeconds() + 60)
+    return Limite;
+  }
 
   useEffect(() => {
-    count.current = count.current + 1
-  }, [valor])
+    limparTimer(getLimite())
+  }, [])
+
+  const Resetar = () => {
+    limparTimer(getLimite())
+  }
 
   return (
     <div>
-      <GlobalStyle />
-      <h2>O que você está pensando?</h2>
-      <textarea placeholder='deixe seu comentário' onChange={(e) => { setValor(e.target.value) }} />
-      <h4>Caracteres usados: {count.current}</h4>
+      <h1>{timer}</h1>
+      <button onClick={() => { Resetar() }}>Reset</button>
     </div>
   )
 }
-
-export default App;
