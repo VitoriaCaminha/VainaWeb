@@ -1783,62 +1783,76 @@ export default function App() {
 
 // class 45: useRef
 
-import React, { useState, useEffect, useRef } from 'react'
+// import React, { useState, useEffect, useRef } from 'react'
 
-export default function App() {
-  const [timer, setTimer] = useState("00:00:00")
+// export default function App() {
+//   const [timer, setTimer] = useState("00:00:00")
 
-  const Clean = useRef(null)
+//   const Clean = useRef(null)
 
-  const getTimer = (e) => {
-    const total = Date.parse(e) - Date.parse(new Date())
-    const segundos = Math.floor((total / 1000) % 60)
-    const minutos = Math.floor((total / 1000 / 60) % 60)
-    const horas = Math.floor((total / 1000 * 60 * 60) % 24)
-    return {
-      total, segundos, minutos, horas
-    }
-  }
+//   const getTimer = (e) => {
+//     const total = Date.parse(e) - Date.parse(new Date())
+//     const segundos = Math.floor((total / 1000) % 60)
+//     const minutos = Math.floor((total / 1000 / 60) % 60)
+//     const horas = Math.floor((total / 1000 * 60 * 60) % 24)
+//     return {
+//       total, segundos, minutos, horas
+//     }
+//   }
 
-  const iniciaTimer = (e) => {
-    const { total, horas, minutos, segundos } = getTimer(e)
-    if (total >= 0) {
-      setTimer(
-        (horas > 9 ? horas : `0${horas}`).concat(':') +
-        (minutos > 9 ? minutos : `0${minutos}`).concat(':') +
-        (segundos > 9 ? segundos : `0${segundos}`)
-      )
-    }
-  }
+//   const iniciaTimer = (e) => {
+//     const { total, horas, minutos, segundos } = getTimer(e)
+//     if (total >= 0) {
+//       setTimer(
+//         (horas > 9 ? horas : `0${horas}`).concat(':') +
+//         (minutos > 9 ? minutos : `0${minutos}`).concat(':') +
+//         (segundos > 9 ? segundos : `0${segundos}`)
+//       )
+//     }
+//   }
 
-  const limparTimer = (e) => {
-    setTimer("00:01:00")
-    if (Clean.current) clearInterval(Clean.current)
-    const id = setInterval(() => {
-      iniciaTimer(e)
-    }, 1000)
-    Clean.current = id
-  }
+//   const limparTimer = (e) => {
+//     setTimer("00:01:00")
+//     if (Clean.current) clearInterval(Clean.current)
+//     const id = setInterval(() => {
+//       iniciaTimer(e)
+//     }, 1000)
+//     Clean.current = id
+//   }
 
-  const getLimite = () => {
-    const Limite = new Date()
+//   const getLimite = () => {
+//     const Limite = new Date()
 
-    Limite.setSeconds(Limite.getSeconds() + 60)
-    return Limite;
-  }
+//     Limite.setSeconds(Limite.getSeconds() + 60)
+//     return Limite;
+//   }
 
-  useEffect(() => {
-    limparTimer(getLimite())
-  }, [])
+//   useEffect(() => {
+//     limparTimer(getLimite())
+//   }, [])
 
-  const Resetar = () => {
-    limparTimer(getLimite())
-  }
+//   const Resetar = () => {
+//     limparTimer(getLimite())
+//   }
 
-  return (
-    <div>
-      <h1>{timer}</h1>
-      <button onClick={() => { Resetar() }}>Reset</button>
-    </div>
-  )
-}
+//   return (
+//     <div>
+//       <h1>{timer}</h1>
+//       <button onClick={() => { Resetar() }}>Reset</button>
+//     </div>
+//   )
+// }
+
+// class 46: GitFlow
+
+// import React from 'react'
+// import * as S from './styled'
+
+// const App = () => {
+//   return (
+//     <S.Div>
+//       <S.Home>Olá!</S.Home>
+//     </S.Div>
+//   )
+// }
+
