@@ -1859,3 +1859,39 @@ export default function App() {
 // class 47: GitFlow
 
 // class 48: Projeto em grupo: Harry Potter
+
+// class 49: API
+
+import React, { useState } from 'react'
+import axios from 'axios'
+
+export default function App() {
+
+  const [input, setInput] = useState('')
+  const [endereco, setEndereco] = useState({})
+
+  const Api = `https://viacep.com.br/ws/${input}/json/`
+
+  function getCep() {
+    axios.get(Api)
+      .then(res => {
+        if (input.length > 0) {
+          setEndereco({
+            rua: res.data.logradouro,
+            bairro: res.data.bairro,
+            uf: res.data.uf,
+            cidade: res.data.localidade,
+          })
+        }
+      })
+  }
+
+  return (
+    <div>
+      <h2>Correios</h2>
+      <input value={input} onChange={e => { setInput(e.target.value) }} />
+      <button onClick={() => { getCep() }}>Buscar</button>
+      <h2>{endereco.rua}</h2>
+    </div>
+  )
+}
