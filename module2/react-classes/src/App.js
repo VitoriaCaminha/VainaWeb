@@ -1857,3 +1857,5 @@ export default function App() {
 // }
 
 // class 47: GitFlow
+
+// class 48: Projeto em grupo: Harry Potter
