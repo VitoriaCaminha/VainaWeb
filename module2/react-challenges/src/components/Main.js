@@ -1,116 +1,141 @@
+// Desafio 04: props
+
+import React from 'react'
+
+const Main = (props, {children}) => {
+    return(
+        <div>
+            {children}
+            <h3>{props.caixa}</h3>
+        </div>
+    )
+}
+export default Main
+
+// const Main = ({grupo2, children}) => {
+//   return (
+//     <div>
+//         {children}
+//       <h1>{grupo2}</h1>
+//     </div>
+//   )
+// }
+
+// export default Main
+
 // Desafio 03: ToDo App Básico
 
-import React, { Component } from 'react'
-import styled from 'styled-components'
+// import React, { Component } from 'react'
+// import styled from 'styled-components'
 
-const Form = styled.form`
-display: flex;
-flex-direction: column;
-align-items: center;
-margin: auto;
-width: 30vw;
-`
+// const Form = styled.form`
+// display: flex;
+// flex-direction: column;
+// align-items: center;
+// margin: auto;
+// width: 30vw;
+// `
 
-const Title = styled.h1`
-@import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
-font-family: 'Sue Ellen Francisco', cursive;
-font-size: 7vh;
-`
+// const Title = styled.h1`
+// @import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
+// font-family: 'Sue Ellen Francisco', cursive;
+// font-size: 7vh;
+// `
 
-const Div = styled.div`
-margin-bottom: 6vh;
-`
+// const Div = styled.div`
+// margin-bottom: 6vh;
+// `
 
-const Input = styled.input`
-border-radius: 5px;
-width: 20vw;
-`
+// const Input = styled.input`
+// border-radius: 5px;
+// width: 20vw;
+// `
 
-const Button = styled.button`
-border-radius: 4px;
-cursor: pointer;
-`
+// const Button = styled.button`
+// border-radius: 4px;
+// cursor: pointer;
+// `
 
-const Ul = styled.ul`
-display: flex;
-`
+// const Ul = styled.ul`
+// display: flex;
+// `
 
-const Li = styled.li`
-width: 30vw;
-`
+// const Li = styled.li`
+// width: 30vw;
+// `
 
-export default class Main extends Component {
-    state = {
-        filme: '',
-        listaDeFilmes: [],
-    }
+// export default class Main extends Component {
+//     state = {
+//         filme: '',
+//         listaDeFilmes: [],
+//     }
 
-    handleChange = (event) => {
-        this.setState({
-            filme: event.target.value,
-        })
-    }
+//     handleChange = (event) => {
+//         this.setState({
+//             filme: event.target.value,
+//         })
+//     }
 
-    Send = (event) => {
-        // event.preventDefault() // Forma certa, mas menos semântica
-        if (this.state.filme !== '') {
-            this.setState({
-                listaDeFilmes: this.state.listaDeFilmes.concat({
-                    filme: this.state.filme,
-                    id: Date.now(),
-                }),
-                filme: '',
-            })
-        }
-    }
+//     Send = (event) => {
+//         // event.preventDefault() // Forma certa, mas menos semântica
+//         if (this.state.filme !== '') {
+//             this.setState({
+//                 listaDeFilmes: this.state.listaDeFilmes.concat({
+//                     filme: this.state.filme,
+//                     id: Date.now(),
+//                 }),
+//                 filme: '',
+//             })
+//         }
+//     }
 
-    // Filter filtra as informações de uma array para outra de acordo com uma condição, sem alterar a primeira array
+//     // Filter filtra as informações de uma array para outra de acordo com uma condição, sem alterar a primeira array
 
-    Remove = (id) => {
-        this.setState({
-            listaDeFilmes: this.state.listaDeFilmes.filter(
-                (ident) => ident.id !== id,
-            ),
-        })
-    }
+//     Remove = (id) => {
+//         this.setState({
+//             listaDeFilmes: this.state.listaDeFilmes.filter(
+//                 (ident) => ident.id !== id,
+//             ),
+//         })
+//     }
 
-    RemoveAll = (id) => {
-        this.setState({
-            listaDeFilmes: this.state.listaDeFilmes.filter(
-                (ident) => ident.listaDeFilmes,
-            ),
-        })
-    } // Inicio do botão que apaga tudo
+//     RemoveAll = (id) => {
+//         this.setState({
+//             listaDeFilmes: this.state.listaDeFilmes.filter(
+//                 (ident) => ident.listaDeFilmes,
+//             ),
+//         })
+//     } // Inicio do botão que apaga tudo
 
-    render() {
-        return (
-            <Form
-                onSubmit={(e) => {
-                    e.preventDefault()
-                }} // Forma mais semântica
-            >
-                <Title>To Do List</Title>
-                <Div>
-                    <Input value={this.state.filme} onChange={this.handleChange} />
-                    <Button onClick={this.Send}>Send</Button>
-                    <Button onClick={() => this.RemoveAll()}>X</Button>
-                </Div>
-                {this.state.listaDeFilmes.map((item) => (
-                    <Ul>
-                        <Li>{item.filme}</Li>
-                        <Button
-                            onClick={() => {
-                                this.Remove(item.id)
-                            }}
-                        >
-                            X
-                        </Button>
-                    </Ul>
-                ))}
-            </Form>
-        )
-    }
-}
+//     render() {
+//         return (
+//             <Form
+//                 onSubmit={(e) => {
+//                     e.preventDefault()
+//                 }} // Forma mais semântica
+//             >
+//                 <Title>To Do List</Title>
+//                 <Div>
+//                     <Input value={this.state.filme} onChange={this.handleChange} />
+//                     <Button onClick={this.Send}>Send</Button>
+//                     <Button onClick={() => this.RemoveAll()}>X</Button>
+//                 </Div>
+//                 {this.state.listaDeFilmes.map((item) => (
+//                     <Ul>
+//                         <Li>{item.filme}</Li>
+//                         <Button
+//                             onClick={() => {
+//                                 this.Remove(item.id)
+//                             }}
+//                         >
+//                             X
+//                         </Button>
+//                     </Ul>
+//                 ))}
+//             </Form>
+//         )
+//     }
+// }
 
 // Desafio 02: calculadora
 

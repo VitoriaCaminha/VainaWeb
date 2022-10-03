@@ -1,18 +1,57 @@
-// Desafio 03: ToDo App Básico
+// Desafio 04: props
 
 import React, { Component } from 'react'
+import Header from './components/Header'
+import Login from './fundoModulo2.jpeg'
+import { createGlobalStyle } from 'styled-components'
 import Main from './components/Main'
-import './App.css'
 
-export default class ToDo extends Component {
+const GlobalStyle = createGlobalStyle`
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: lightskyblue;
+}
+`
+
+export default class App extends Component {
   render() {
     return (
       <>
-        <Main />
+        <GlobalStyle />
+        <h1>Componente principal</h1>
+        <Header
+          subtitulo="eu sou um subtitulo"
+          logo={Login}
+          lista="Inicio"
+          lista2="Sobre"
+          lista3="Contatos"
+        />
+        <Main caixa='eu sou um h3'>
+          <h4>eu sou um filho</h4>
+          <button>eu sou um botão</button>
+        </Main>
       </>
     )
   }
 }
+
+// Desafio 03: ToDo App Básico
+
+// import React, { Component } from 'react'
+// import Main from './components/Main'
+// import './App.css'
+
+// export default class ToDo extends Component {
+//   render() {
+//     return (
+//       <>
+//         <Main />
+//       </>
+//     )
+//   }
+// }
 
 // Desafio 02: calculadora
 
