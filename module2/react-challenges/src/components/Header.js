@@ -1,22 +1,24 @@
-import React, { Component } from 'react'
+// Desafio 02: calculadora
 
-import styled from 'styled-components'
+// import React, { Component } from 'react'
 
-export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 3.5vw;
-  color: #bbb;
-`
+// import styled from 'styled-components'
 
-export default class Header extends Component {
-  render() {
-    return (
-      <Container>
-        <h1>Calculadora</h1>
-      </Container>
-    )
-  }
-}
+// export const Container = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   font-size: 3.5vw;
+//   color: #bbb;
+// `
+
+// export default class Header extends Component {
+//   render() {
+//     return (
+//       <Container>
+//         <h1>Calculadora</h1>
+//       </Container>
+//     )
+//   }
+// }

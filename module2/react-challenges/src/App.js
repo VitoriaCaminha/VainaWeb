@@ -1,19 +1,35 @@
-// Desafio 02: calculadora
+// Desafio 03: ToDo App Básico
 
 import React, { Component } from 'react'
-import Header from './components/Header.js'
-import Main from './components/Main.js'
+import Main from './components/Main'
+import './App.css'
 
-export default class App extends Component {
+export default class ToDo extends Component {
   render() {
     return (
-      <div>
-        <Header />
+      <>
         <Main />
-      </div>
+      </>
     )
   }
 }
+
+// Desafio 02: calculadora
+
+// import React, { Component } from 'react'
+// import Header from './components/Header'
+// import Main from './components/Main'
+
+// export default class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <Header />
+//         <Main />
+//       </div>
+//     )
+//   }
+// }
 
 // Desafio 01: contador
 
