@@ -1897,3 +1897,58 @@ export default function App() {
 // }
 
 // class 50: Projeto em grupo: ODS
+
+// class 53: keyframes e animation
+
+// ease- Especifica uma animação com início lento, rápido e final lento (este é o padrão)
+// linear- Especifica uma animação com a mesma velocidade do início ao fim
+// ease-in- Especifica uma animação com um início lento
+// ease-out- Especifica uma animação com um final lento
+// ease-in-out- Especifica uma animação com início e fim lentos
+// cubic-bezier(n,n,n,n)- Permite definir seus próprios valores em uma função cúbica-bezier
+
+import React from 'react'
+import styled from 'styled-components'
+
+const Caixa = styled.div`
+border: solid;
+/* animation: exemplo 2s ease-in-out infinite normal both; */
+
+animation: exemplo 5s cubic-bezier(1, 2, 5, 1) infinite;
+
+@keyframes exemplo {
+  0% {
+    width: 10vw;
+    background-color: green;
+  }
+
+  50% {
+    width: 20vw;
+    background-color: red;
+  }
+
+  100% {
+    width: 30vw;
+    background-color: yellow;
+  }
+}
+`
+
+/* @keyframes exemplo {
+from{
+  background-color: red;
+}
+to{
+  background-color: yellow;
+}
+}
+` 
+*/
+
+export default function App() {
+  return (
+    <Caixa>
+      <h2>Bom dia galera</h2>
+    </Caixa>
+  )
+}
