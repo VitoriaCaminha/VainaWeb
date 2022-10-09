@@ -1,41 +1,56 @@
-// Desafio 04: props
+// Desafio 05: Página filmes e séries
 
-import React, { Component } from 'react'
-import Header from './components/Header'
-import Login from './fundoModulo2.jpeg'
-import { createGlobalStyle } from 'styled-components'
-import Main from './components/Main'
-
-const GlobalStyle = createGlobalStyle`
-body{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: lightskyblue;
-}
-`
+import React, { Component } from "react";
+import Header from "./components/Header";
 
 export default class App extends Component {
   render() {
     return (
-      <>
-        <GlobalStyle />
-        <h1>Componente principal</h1>
-        <Header
-          subtitulo="eu sou um subtitulo"
-          logo={Login}
-          lista="Inicio"
-          lista2="Sobre"
-          lista3="Contatos"
-        />
-        <Main caixa='eu sou um h3'>
-          <h4>eu sou um filho</h4>
-          <button>eu sou um botão</button>
-        </Main>
-      </>
-    )
+      <div>
+        <Header/>
+      </div>
+    );
   }
 }
+
+// Desafio 04: props
+
+// import React, { Component } from 'react'
+// import Header from './components/Header'
+// import Login from './fundoModulo2.jpeg'
+// import { createGlobalStyle } from 'styled-components'
+// import Main from './components/Main'
+
+// const GlobalStyle = createGlobalStyle`
+// body{
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   background-color: lightskyblue;
+// }
+// `
+
+// export default class App extends Component {
+//   render() {
+//     return (
+//       <>
+//         <GlobalStyle />
+//         <h1>Componente principal</h1>
+//         <Header
+//           subtitulo="eu sou um subtitulo"
+//           logo={Login}
+//           lista="Inicio"
+//           lista2="Sobre"
+//           lista3="Contatos"
+//         />
+//         <Main caixa='eu sou um h3'>
+//           <h4>eu sou um filho</h4>
+//           <button>eu sou um botão</button>
+//         </Main>
+//       </>
+//     )
+//   }
+// }
 
 // Desafio 03: ToDo App Básico
 

@@ -1,38 +1,68 @@
-// Desafio 04: props
+// Desafio 05: Página filmes e séries
 
-import React, { Component } from 'react'
-import styled from 'styled-components'
-
-const Container = styled.div`
-  border: solid;
-  width: 40vw;
-`
-
-const Subtitle = styled.h2`
-  font-size: 30px;
-`
-
-const Photo = styled.img`
-  width: 10vw;
-`
+import React, { Component } from "react";
+import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import Movies from "./Movies.js";
+import Series from "./Series.js";
 
 export default class Header extends Component {
   render() {
     return (
-      <Container>
-        <Subtitle>{this.props.subtitulo}</Subtitle>
-        <Photo src={this.props.logo} alt="logo" />
+      <BrowserRouter>
         <nav>
           <ul>
-            <li>{this.props.lista}</li>
-            <li>{this.props.lista2}</li>
-            <li>{this.props.lista3}</li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/series">Series</Link>
+            </li>
           </ul>
         </nav>
-      </Container>
-    )
+        <Routes>
+          <Route path="/" element={<Movies />} />
+          <Route path="/series" element={<Series />} />
+        </Routes>
+      </BrowserRouter>
+    );
   }
 }
+
+// Desafio 04: props
+
+// import React, { Component } from 'react'
+// import styled from 'styled-components'
+
+// const Container = styled.div`
+//   border: solid;
+//   width: 40vw;
+// `
+
+// const Subtitle = styled.h2`
+//   font-size: 30px;
+// `
+
+// const Photo = styled.img`
+//   width: 10vw;
+// `
+
+// export default class Header extends Component {
+//   render() {
+//     return (
+//       <Container>
+//         <Subtitle>{this.props.subtitulo}</Subtitle>
+//         <Photo src={this.props.logo} alt="logo" />
+//         <nav>
+//           <ul>
+//             <li>{this.props.lista}</li>
+//             <li>{this.props.lista2}</li>
+//             <li>{this.props.lista3}</li>
+//           </ul>
+//         </nav>
+//       </Container>
+//     )
+//   }
+// }
 
 // Desafio 02: calculadora
 

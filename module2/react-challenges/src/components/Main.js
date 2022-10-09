@@ -1,16 +1,19 @@
+// Desafio 05: Página filmes e séries
+
+
 // Desafio 04: props
 
-import React from 'react'
+// import React from 'react'
 
-const Main = (props, {children}) => {
-    return(
-        <div>
-            {children}
-            <h3>{props.caixa}</h3>
-        </div>
-    )
-}
-export default Main
+// const Main = (props, {children}) => {
+//     return(
+//         <div>
+//             {children}
+//             <h3>{props.caixa}</h3>
+//         </div>
+//     )
+// }
+// export default Main
 
 // const Main = ({grupo2, children}) => {
 //   return (
