@@ -1907,48 +1907,82 @@ export default function App() {
 // ease-in-out- Especifica uma animação com início e fim lentos
 // cubic-bezier(n,n,n,n)- Permite definir seus próprios valores em uma função cúbica-bezier
 
+// import React from 'react'
+// import styled from 'styled-components'
+
+// const Caixa = styled.div`
+// border: solid;
+// /* animation: exemplo 2s ease-in-out infinite normal both; */
+
+// animation: exemplo 5s cubic-bezier(1, 2, 5, 1) infinite;
+
+// @keyframes exemplo {
+//   0% {
+//     width: 10vw;
+//     background-color: green;
+//   }
+
+//   50% {
+//     width: 20vw;
+//     background-color: red;
+//   }
+
+//   100% {
+//     width: 30vw;
+//     background-color: yellow;
+//   }
+// }
+// `
+
+// /* @keyframes exemplo {
+// from{
+//   background-color: red;
+// }
+// to{
+//   background-color: yellow;
+// }
+// }
+// ` 
+// */
+
+// export default function App() {
+//   return (
+//     <Caixa>
+//       <h2>Bom dia galera</h2>
+//     </Caixa>
+//   )
+// }
+
+// class 54: props
+
 import React from 'react'
-import styled from 'styled-components'
-
-const Caixa = styled.div`
-border: solid;
-/* animation: exemplo 2s ease-in-out infinite normal both; */
-
-animation: exemplo 5s cubic-bezier(1, 2, 5, 1) infinite;
-
-@keyframes exemplo {
-  0% {
-    width: 10vw;
-    background-color: green;
-  }
-
-  50% {
-    width: 20vw;
-    background-color: red;
-  }
-
-  100% {
-    width: 30vw;
-    background-color: yellow;
-  }
-}
-`
-
-/* @keyframes exemplo {
-from{
-  background-color: red;
-}
-to{
-  background-color: yellow;
-}
-}
-` 
-*/
+import { useState } from 'react'
+import Props from './Props'
 
 export default function App() {
+  const [open, setOpen] = useState()
   return (
-    <Caixa>
-      <h2>Bom dia galera</h2>
-    </Caixa>
+    <section>
+      <div>
+        <Props titulo='Vamos falar de props' modal={() => setOpen(!open)} />
+        {open && <Menu primeiro='Inicio' segundo='Meio' terceiro='Final' />}
+      </div>
+      <div>
+        <h2>Vamos falar sobre cores</h2>
+        <Menu primeiro='red' segundo='blue' terceiro='yellow' />
+      </div>
+    </section>
+  )
+}
+
+const Menu = ({ primeiro, segundo, terceiro }) => {
+  return (
+    <nav>
+      <ul>
+        <li>{primeiro}</li>
+        <li>{segundo}</li>
+        <li>{terceiro}</li>
+      </ul>
+    </nav>
   )
 }
