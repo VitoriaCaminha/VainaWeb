@@ -1,6 +1,3 @@
-// Desafio 05: Página filmes e séries
-
-
 // Desafio 04: props
 
 // import React from 'react'
