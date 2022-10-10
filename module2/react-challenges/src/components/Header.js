@@ -1,32 +1,56 @@
+// Desafio 07: Desafio Api
+
+import React from "react";
+import { Link } from "react-router-dom";
+
+const Header = ({ rota, rota2 }) => {
+  return (
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">{rota}</Link>
+          </li>
+          <li>
+            <Link to="/dog">{rota2}</Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+};
+
+export default Header;
+
 // Desafio 05: Página filmes e séries
 
-import React, { Component } from "react";
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
-import Movies from "./Movies.js";
-import Series from "./Series.js";
+// import React, { Component } from "react";
+// import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+// import Movies from "./Movies.js";
+// import Series from "./Series.js";
 
-export default class Header extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/series">Series</Link>
-            </li>
-          </ul>
-        </nav>
-        <Routes>
-          <Route path="/" element={<Movies />} />
-          <Route path="/series" element={<Series />} />
-        </Routes>
-      </BrowserRouter>
-    );
-  }
-}
+// export default class Header extends Component {
+//   render() {
+//     return (
+//       <BrowserRouter>
+//         <nav>
+//           <ul>
+//             <li>
+//               <Link to="/">Home</Link>
+//             </li>
+//             <li>
+//               <Link to="/series">Series</Link>
+//             </li>
+//           </ul>
+//         </nav>
+//         <Routes>
+//           <Route path="/" element={<Movies />} />
+//           <Route path="/series" element={<Series />} />
+//         </Routes>
+//       </BrowserRouter>
+//     );
+//   }
+// }
 
 // Desafio 04: props
 

@@ -1,59 +1,76 @@
-// Desafio 06: ToDo App
+// Desafio 07: Desafio Api
 
-import React, { useState } from "react";
+import React from "react";
+import Router from "./components/Route";
+import * as S from "./components/Styles";
 
-function App() {
-  const [tarefas, setTarefas] = useState("");
-  const [listadeTarefas, setLista] = useState([]);
-
-  console.log(listadeTarefas);
-
-  const nome = { tarefas: tarefas, id: Date.now() };
-
-  const handleClick = () => {
-    if (tarefas === "") {
-    } else {
-      setLista([...listadeTarefas, nome]);
-    }
-    setTarefas("");
-  };
-
-  const Remove = (id) => {
-    setLista(listadeTarefas.filter((item) => item.id !== id));
-  };
-
+const App = () => {
   return (
     <div>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}>
-        <input
-          value={tarefas}
-          onChange={(e) => {
-            setTarefas(e.target.value);
-          }}
-        />
-        <button onClick={() => handleClick()}>ADD</button>
-      </form>
-      {listadeTarefas.map((item, index) => (
-        <div key={index}>
-          <ul>
-            <li>{item.tarefas}</li>
-          </ul>
-          <button
-            onClick={() => {
-              Remove(item.id);
-            }}>
-            Remove
-          </button>
-        </div>
-      ))}
+      <S.GlobalStyle />
+      <Router />
     </div>
   );
-}
+};
 
 export default App;
+
+// Desafio 06: ToDo App
+
+// import React, { useState } from "react";
+
+// function App() {
+//   const [tarefas, setTarefas] = useState("");
+//   const [listadeTarefas, setLista] = useState([]);
+
+//   console.log(listadeTarefas);
+
+//   const nome = { tarefas: tarefas, id: Date.now() };
+
+//   const handleClick = () => {
+//     if (tarefas === "") {
+//     } else {
+//       setLista([...listadeTarefas, nome]);
+//     }
+//     setTarefas("");
+//   };
+
+//   const Remove = (id) => {
+//     setLista(listadeTarefas.filter((item) => item.id !== id));
+//   };
+
+//   return (
+//     <div>
+//       <form
+//         onSubmit={(e) => {
+//           e.preventDefault();
+//         }}>
+//         <input
+//           value={tarefas}
+//           onChange={(e) => {
+//             setTarefas(e.target.value);
+//           }}
+//         />
+//         <button onClick={() => handleClick()}>ADD</button>
+//       </form>
+//       {listadeTarefas.map((item, index) => (
+//         <div key={index}>
+//           <ul>
+//             <li>{item.tarefas}</li>
+//           </ul>
+//           <button
+//             onClick={() => {
+//               Remove(item.id);
+//             }}>
+//             Remove
+//           </button>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
+
+// export default App;
 
 // Desafio 05: Página filmes e séries
 
