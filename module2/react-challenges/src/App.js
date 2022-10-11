@@ -1,19 +1,35 @@
-// Desafio 07: Desafio Api
+// Desafio 08: Api Harry Potter
 
-import React from "react";
-import Router from "./components/Route";
-import * as S from "./components/Styles";
+import React from 'react'
+
+import Header from './components/Header.js'
 
 const App = () => {
-  return (
-    <div>
-      <S.GlobalStyle />
-      <Router />
-    </div>
-  );
-};
+    return (
+        <div>
+            <Header />
+        </div>
+    )
+}
 
 export default App;
+
+// Desafio 07: Desafio Api
+
+// import React from "react";
+// import Router from "./components/Route";
+// import * as S from "./components/Styles";
+
+// const App = () => {
+//   return (
+//     <div>
+//       <S.GlobalStyle />
+//       <Router />
+//     </div>
+//   );
+// };
+
+// export default App;
 
 // Desafio 06: ToDo App
 

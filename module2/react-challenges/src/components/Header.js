@@ -1,26 +1,63 @@
-// Desafio 07: Desafio Api
+// Desafio 08: Api Harry Potter
 
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
-const Header = ({ rota, rota2 }) => {
-  return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">{rota}</Link>
-          </li>
-          <li>
-            <Link to="/dog">{rota2}</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  );
-};
+const Header = () => {
+    const [card, setCard] = useState([])
+
+    useEffect(() => {
+        axios.get('http://hp-api.herokuapp.com/api/characters')
+            .then(res => {
+                setCard(res.data)
+            })
+            .catch(err => {
+                console.log('Erro', err)
+            })
+    }, [])
+
+    return (
+        <div>
+            <h1>Personagens Harry Potter</h1>
+            {card.map((item) => (
+                <div>
+                    <ul>
+                        <li>{item.name}</li>
+                    </ul>
+                    <figure>
+                        <img src={item.image} />
+                    </figure>
+                </div>
+            ))}
+        </div>
+    )
+}
 
 export default Header;
+
+// Desafio 07: Desafio Api
+
+// import React from "react";
+// import { Link } from "react-router-dom";
+
+// const Header = ({ rota, rota2 }) => {
+//   return (
+//     <div>
+//       <nav>
+//         <ul>
+//           <li>
+//             <Link to="/">{rota}</Link>
+//           </li>
+//           <li>
+//             <Link to="/dog">{rota2}</Link>
+//           </li>
+//         </ul>
+//       </nav>
+//     </div>
+//   );
+// };
+
+// export default Header;
 
 // Desafio 05: Página filmes e séries
 
